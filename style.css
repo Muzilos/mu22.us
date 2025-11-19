@@ -248,10 +248,9 @@ section {
 
 .artwork-image {
     width: 100%;
-    aspect-ratio: 4 / 5;
-    object-fit: cover;
-    background: #ddd;
-    display: block;
+    height: auto;
+    object-fit: contain;
+    aspect-ratio: auto;
 }
 
 .artwork-body {
