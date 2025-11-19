@@ -1,0 +1,87 @@
+/* style-nocturne.css */
+@import url("style.css");
+
+/* Override base CSS variables */
+:root {
+    --bg: #0b0d10;
+    --bg-alt: #14181e;
+    --text: #e8e8e8;
+    --muted: #9ba3ad;
+    --border: rgba(255, 255, 255, 0.08);
+
+    --accent: #6ea8ff;
+    --accent-soft: rgba(110, 168, 255, 0.15);
+
+    --radius-lg: 14px;
+    --radius-sm: 8px;
+
+    --shadow-soft: 0 3px 7px rgba(0, 0, 0, 0.55);
+}
+
+/* Global */
+body {
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* Cards and sections */
+.info-card,
+.artwork-card,
+.hero {
+    background: var(--bg-alt) !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Text */
+.hero-title,
+.section-title,
+.brand-title {
+    color: var(--text);
+}
+
+/* Muted text */
+.info-card-note,
+.section-note,
+.brand-meta,
+.brand-subtitle {
+    color: var(--muted);
+}
+
+/* Buttons */
+.btn {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white;
+}
+.btn.outline {
+    background: transparent;
+    color: var(--accent);
+}
+
+/* Navigation */
+.nav-link {
+    color: var(--muted);
+}
+.nav-link.primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white;
+}
+
+/* Inputs */
+input, textarea, select {
+    background: #1a1e24;
+    color: var(--text);
+    border-color: rgba(255, 255, 255, 0.12);
+}
+input:focus, textarea:focus, select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 1px var(--accent-soft);
+}
+
+/* Pills, badges */
+.pill, .badge {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: var(--muted);
+}

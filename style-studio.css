@@ -1,0 +1,93 @@
+/* style-studio.css */
+@import url("style.css");
+
+/* Raw canvas, paint-rag palette */
+:root {
+    --bg: #f5efe8;
+    --bg-alt: #f9f4ee;
+    --text: #3b3028;
+    --muted: #776b61;
+    --border: rgba(0, 0, 0, 0.08);
+
+    --accent: #c47a2c;         /* earthy ochre */
+    --accent-soft: rgba(196, 122, 44, 0.16);
+
+    --radius-lg: 12px;
+    --radius-sm: 7px;
+
+    --shadow-soft: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* Overall */
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-feature-settings: "liga", "kern";
+}
+
+/* Cards */
+.info-card,
+.artwork-card,
+.hero {
+    background: var(--bg-alt) !important;
+    border-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Title text */
+.hero-title,
+.section-title,
+.brand-title {
+    color: var(--text);
+}
+
+/* Paragraph / muted */
+.info-card-note,
+.section-note,
+.brand-meta,
+.brand-subtitle {
+    color: var(--muted);
+}
+
+/* Buttons */
+.btn {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff4e6;
+}
+.btn.outline {
+    background: transparent;
+    color: var(--accent);
+}
+
+/* Navbar */
+.nav-link {
+    color: var(--muted);
+}
+.nav-link.primary {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}
+
+/* Form fields */
+input, textarea, select {
+    background: #fffdf9;
+    border-color: rgba(0, 0, 0, 0.12);
+    color: var(--text);
+}
+input:focus, textarea:focus, select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 1px var(--accent-soft);
+}
+
+/* Pills & filters */
+.pill, .filter-chip, .badge {
+    background: #f2e8de;
+    border-color: #e2d8cd;
+    color: #6e5a4a;
+}
+.filter-chip.active {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+    color: var(--accent);
+}
