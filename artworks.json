@@ -1,0 +1,64 @@
+{
+    "artworks": [
+        {
+            "slug": "Jacket",
+            "title": "Jacket",
+            "year": 2024,
+            "medium": "Oil on canvas",
+            "size": "18 × 24 in",
+            "status": "available",
+            "price": 1700,
+            "price_display": "number",
+            "image": "paintings/09-30-2024 13.34.jpg",
+            "note": ""
+        },
+        {
+            "slug": "cow",
+            "title": "Cow",
+            "year": 2022,
+            "medium": "Oil on canvas",
+            "size": "8 × 12 in",
+            "status": "sold",
+            "price": null,
+            "price_display": "request",
+            "image": "paintings/IMG_20191111_034703_152.jpg",
+            "note": ""
+        },
+        {
+            "slug": "looking-away",
+            "title": "Looking away",
+            "year": 2024,
+            "medium": "Oil on canvas",
+            "size": "30 × 24 in",
+            "status": "available",
+            "price": 900,
+            "price_display": "number",
+            "image": "paintings/IMG_20240408_164102_836.png",
+            "note": ""
+        },
+        {
+            "slug": "sitting-figure",
+            "title": "Sitting figure",
+            "year": 2024,
+            "medium": "Oil on canvas",
+            "size": "18 × 24 in",
+            "status": "available",
+            "price": 900,
+            "price_display": "number",
+            "image": "paintings/IMG_20240422_175529_875.png",
+            "note": ""
+        },
+        {
+            "slug": "mask-off",
+            "title": "Mask off",
+            "year": 2021,
+            "medium": "Oil on canvas",
+            "size": "8 × 8 in",
+            "status": "sold",
+            "price": null,
+            "price_display": "number",
+            "image": "paintings/IMG_20210424_130913_187.jpg",
+            "note": ""
+        }
+    ]
+}

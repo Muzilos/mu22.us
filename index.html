@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Muzzammil Mehdi — Paintings</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Paintings and works on paper by Muzzammil Mehdi, New York City." />
+    <style>
+        :root {
+            --bg: #f5f3f0;
+            --bg-alt: #ffffff;
+            --text: #111111;
+            --muted: #777777;
+            --accent: #1f4f7b;
+            --accent-soft: rgba(31, 79, 123, 0.08);
+            --border: #ded7cf;
+            --radius-lg: 18px;
+            --radius-sm: 10px;
+            --shadow-soft: 0 14px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Layout */
+
+        .site {
+            max-width: 1120px;
+            padding: 24px 20px 40px;
+            margin: 0 auto;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 32px;
+        }
+
+        @media (min-width: 768px) {
+            header {
+                flex-direction: row;
+                align-items: flex-end;
+                justify-content: space-between;
+                margin-top: 12px;
+            }
+        }
+
+        .brand {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .brand-title {
+            font-size: 1.9rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .brand-subtitle {
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            color: var(--muted);
+        }
+
+        .brand-meta {
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .nav-link {
+            font-size: 0.9rem;
+            padding: 7px 12px;
+            border-radius: 999px;
+            border: 1px solid transparent;
+            background: transparent;
+            color: var(--muted);
+            cursor: pointer;
+        }
+
+        .nav-link.primary {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        .nav-link:hover {
+            border-color: var(--border);
+            text-decoration: none;
+        }
+
+        .nav-link.primary:hover {
+            box-shadow: var(--shadow-soft);
+        }
+
+        /* Hero */
+
+        .hero {
+            margin-bottom: 40px;
+            padding: 20px 18px 22px;
+            border-radius: var(--radius-lg);
+            background: radial-gradient(circle at top left, #ffffff 0, #f4f0ec 52%, #ece4da 100%);
+            border: 1px solid var(--border);
+            display: grid;
+            gap: 18px;
+        }
+
+        @media (min-width: 800px) {
+            .hero {
+                grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+                align-items: flex-end;
+            }
+        }
+
+        .hero-title {
+            font-size: 1.8rem;
+            line-height: 1.3;
+            max-width: 26rem;
+        }
+
+        .hero-body {
+            font-size: 0.95rem;
+            color: var(--muted);
+            max-width: 32rem;
+        }
+
+        .hero-tags {
+            margin-top: 10px;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .pill {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            padding: 4px 10px;
+            border-radius: 999px;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            background: rgba(255, 255, 255, 0.8);
+            color: var(--muted);
+        }
+
+        .hero-meta-box {
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: var(--radius-lg);
+            border: 1px dashed rgba(0, 0, 0, 0.08);
+            padding: 14px 16px;
+            font-size: 0.85rem;
+            color: var(--muted);
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .hero-meta-label {
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            font-size: 0.72rem;
+            color: #999;
+        }
+
+        /* Section */
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+        }
+
+        .section-note {
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+
+        /* Artworks grid */
+
+        .artwork-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        @media (min-width: 900px) {
+            .artwork-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        .artwork-card {
+            border-radius: var(--radius-lg);
+            background: var(--bg-alt);
+            border: 1px solid var(--border);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 260px;
+            transition: transform 0.15s ease-out, box-shadow 0.15s ease-out,
+                border-color 0.15s ease-out;
+            cursor: pointer;
+        }
+
+        .artwork-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-soft);
+            border-color: rgba(0, 0, 0, 0.08);
+        }
+
+        .artwork-image {
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            background: #ddd;
+            display: block;
+        }
+
+        .artwork-body {
+            padding: 10px 11px 11px;
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            font-size: 0.9rem;
+        }
+
+        .artwork-title-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 8px;
+            align-items: baseline;
+        }
+
+        .artwork-title {
+            font-size: 0.92rem;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .artwork-year {
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+
+        .artwork-meta {
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+
+        .artwork-footer {
+            margin-top: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.8rem;
+        }
+
+        .badge {
+            padding: 2px 8px;
+            border-radius: 999px;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            background: #faf7f3;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-size: 0.7rem;
+            color: #666;
+        }
+
+        .badge.available {
+            background: #f1faf3;
+            border-color: #b7e3c5;
+            color: #285732;
+        }
+
+        .badge.sold {
+            background: #e0948a;
+            border-color: #d4cbc3;
+            color: #000000;
+        }
+
+        .price {
+            font-size: 0.8rem;
+            color: #333;
+        }
+
+        .price-muted {
+            color: var(--muted);
+        }
+
+        /* Filter */
+
+        .work-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 14px;
+            font-size: 0.8rem;
+        }
+
+        .filter-chip {
+            padding: 4px 9px;
+            border-radius: 999px;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            background: rgba(255, 255, 255, 0.8);
+            cursor: pointer;
+            color: var(--muted);
+        }
+
+        .filter-chip.active {
+            border-color: var(--accent);
+            background: var(--accent-soft);
+            color: var(--accent);
+        }
+
+        /* Commissions / Prints / About / Contact */
+
+        .card-row {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr);
+            gap: 18px;
+        }
+
+        @media (min-width: 860px) {
+            .card-row {
+                grid-template-columns: 1.1fr 1.1fr;
+            }
+        }
+
+        .info-card {
+            border-radius: var(--radius-lg);
+            background: var(--bg-alt);
+            border: 1px solid var(--border);
+            padding: 16px 16px 18px;
+            font-size: 0.9rem;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .info-card-title {
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+        }
+
+        .info-card-note {
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+
+        .tiers {
+            display: grid;
+            gap: 12px;
+            margin-top: 4px;
+        }
+
+        .tier {
+            border-radius: var(--radius-sm);
+            padding: 10px 11px;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            background: #faf8f6;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .tier-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+        }
+
+        .tier-name {
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+        }
+
+        .tier-price {
+            font-weight: 500;
+        }
+
+        .tier-meta {
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 999px;
+            padding: 7px 14px;
+            font-size: 0.85rem;
+            border: 1px solid var(--accent);
+            background: var(--accent);
+            color: #fff;
+            cursor: pointer;
+            margin-top: 6px;
+            text-decoration: none;
+        }
+
+        .btn.outline {
+            background: transparent;
+            color: var(--accent);
+        }
+
+        .btn:hover {
+            box-shadow: var(--shadow-soft);
+            text-decoration: none;
+        }
+
+        .stack {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        /* Contact form */
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+            gap: 18px;
+        }
+
+        @media (max-width: 720px) {
+            .contact-grid {
+                grid-template-columns: minmax(0, 1fr);
+            }
+        }
+
+        form {
+            display: grid;
+            gap: 10px;
+        }
+
+        label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.13em;
+            color: var(--muted);
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px 9px;
+            border-radius: 9px;
+            border: 1px solid var(--border);
+            font-size: 0.9rem;
+            font-family: inherit;
+            background: #fff;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 1px var(--accent-soft);
+        }
+
+        .contact-note {
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+
+        footer {
+            padding: 18px 20px 26px;
+            margin-top: auto;
+            font-size: 0.8rem;
+            color: var(--muted);
+            border-top: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .footer-inner {
+            max-width: 1120px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        /* Utility */
+
+        .muted {
+            color: var(--muted);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="site">
+        <header>
+            <div class="brand">
+                <div class="brand-title">Muzzammil&nbsp;Mehdi</div>
+                <div class="brand-subtitle">Painting & Drawing</div>
+                <div class="brand-meta">New York City</div>
+            </div>
+            <nav aria-label="Main navigation">
+                <button class="nav-link primary" onclick="scrollToSection('available')">
+                    Available works
+                </button>
+                <button class="nav-link" onclick="scrollToSection('commissions')">
+                    Commission a painting
+                </button>
+                <button class="nav-link" onclick="scrollToSection('prints')">
+                    Prints
+                </button>
+                <button class="nav-link" onclick="scrollToSection('about')">
+                    About
+                </button>
+                <button class="nav-link" onclick="scrollToSection('contact')">
+                    Contact
+                </button>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Hero -->
+            <section class="hero" aria-label="Overview">
+                <div>
+                    <h1 class="hero-title">
+                        Contemporary paintings exploring light, edges, and the quiet drama of space.
+                    </h1>
+                    <p class="hero-body">
+                        A selection of recent paintings and works on paper. Works marked
+                        <strong>Available</strong> can be acquired directly. For commissions,
+                        I work with collectors on scale, palette, and mood while maintaining my
+                        studio practice and autonomy.
+                    </p>
+                    <div class="hero-tags">
+                        <span class="pill">New Work · 2024–2025</span>
+                        <span class="pill">Originals & Commissions</span>
+                    </div>
+                </div>
+                <div class="hero-meta-box">
+                    <div class="hero-meta-label">Collector notes</div>
+                    <div>
+                        • Prices listed for select works.<br />
+                        • For other pieces, please request price with your location.<br />
+                        • Studio visits in NYC are available by appointment.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Works -->
+            <section id="available">
+                <div class="section-header">
+                    <h2 class="section-title">Available works</h2>
+                    <div class="section-note">
+                        10–15 key works. More images available on request.
+                    </div>
+                </div>
+
+                <div class="work-filters" aria-label="Filter works">
+                    <button class="filter-chip active" data-filter="all" onclick="setFilter('all')">
+                        All
+                    </button>
+                    <button class="filter-chip" data-filter="available" onclick="setFilter('available')">
+                        Available only
+                    </button>
+                    <button class="filter-chip" data-filter="sold" onclick="setFilter('sold')">
+                        Sold
+                    </button>
+                </div>
+
+                <div class="artwork-grid" id="artworkGrid"></div>
+
+            </section>
+
+            <!-- Commissions + Prints -->
+            <section id="commissions">
+                <div class="section-header">
+                    <h2 class="section-title">Commission a painting</h2>
+                    <div class="section-note">
+                        A clear structure that still feels indie and studio-driven.
+                    </div>
+                </div>
+
+                <div class="card-row">
+                    <!-- Commissions -->
+                    <article class="info-card">
+                        <div class="info-card-title">Commission options</div>
+                        <p class="info-card-note">
+                            I take on a small number of commissions each year. The work remains
+                            consistent with my studio practice—think of it as inviting a
+                            specific painting into your home, not ordering a product.
+                        </p>
+
+                        <div class="tiers">
+                            <div class="tier">
+                                <div class="tier-header">
+                                    <span class="tier-name">Small</span>
+                                    <span class="tier-price">From $1,500</span>
+                                </div>
+                                <div class="tier-meta">
+                                    ~18 × 14 in. Ideal for apartments, entryways, or over a desk.
+                                    Palette and general mood discussed together.
+                                </div>
+                            </div>
+
+                            <div class="tier">
+                                <div class="tier-header">
+                                    <span class="tier-name">Medium</span>
+                                    <span class="tier-price">From $3,200</span>
+                                </div>
+                                <div class="tier-meta">
+                                    ~30 × 24 in. Strong presence in a living room or dining room.
+                                    I send 1–2 compositional sketches before beginning.
+                                </div>
+                            </div>
+
+                            <div class="tier">
+                                <div class="tier-header">
+                                    <span class="tier-name">Large</span>
+                                    <span class="tier-price">From $5,500</span>
+                                </div>
+                                <div class="tier-meta">
+                                    40 in and up. For statement walls or public-facing spaces.
+                                    Timeline and framing discussed individually.
+                                </div>
+                            </div>
+                        </div>
+
+                        <a class="btn" href="#contact">
+                            Start a commission inquiry
+                        </a>
+                    </article>
+
+                    <!-- Prints -->
+                    <article id="prints" class="info-card">
+                        <div class="info-card-title">Prints</div>
+                        <div class="stack">
+                            <p class="info-card-note">
+                                A small number of works are available as archival pigment prints
+                                on paper, signed and numbered in limited editions.
+                            </p>
+                            <ul class="muted" style="padding-left: 18px; margin: 0; font-size: 0.85rem;">
+                                <li>Edition sizes typically 20–30.</li>
+                                <li>Printed on cotton rag paper, museum-grade inks.</li>
+                                <li>Ships unframed, worldwide from NYC.</li>
+                            </ul>
+                            <p class="contact-note">
+                                I’m currently setting up a clean checkout for prints. In the
+                                meantime, you can request prints through the contact form—mention
+                                which piece you’re interested in and your location.
+                            </p>
+                            <!-- When you have a Shopify / Stripe / etc. link, replace the href below -->
+                            <a class="btn outline" href="#contact">
+                                Ask about available prints
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- About -->
+            <section id="about">
+                <div class="section-header">
+                    <h2 class="section-title">About the work</h2>
+                    <div class="section-note">
+                        A short paragraph. Enough for a curator; not so much it feels like marketing.
+                    </div>
+                </div>
+
+                <article class="info-card">
+                    <p class="stack">
+                        <span>
+                            I’m a painter living and working in New York City, currently completing
+                            my MFA. My work moves between abstraction and interior space—edges,
+                            thresholds, and the way light sits on a wall or in the corner of a room.
+                        </span>
+                        <span>
+                            I think of the paintings as quiet, concentrated situations. The surfaces
+                            are built slowly, often over months, with attention to the way color
+                            can feel both sharp and hazy at once.
+                        </span>
+                        <span class="info-card-note">
+                            This site is kept intentionally focused: a small group of recent
+                            works, clear information for collectors, and a direct way to reach me.
+                        </span>
+                    </p>
+                </article>
+            </section>
+
+            <!-- Contact -->
+            <section id="contact">
+                <div class="section-header">
+                    <h2 class="section-title">Collector inquiries</h2>
+                    <div class="section-note">
+                        For acquisitions, commissions, prints, or studio visits.
+                    </div>
+                </div>
+
+                <div class="contact-grid">
+                    <article class="info-card">
+                        <form action="mailto:your@email.com" method="post" enctype="text/plain">
+                            <div>
+                                <label for="name">Name</label>
+                                <input id="name" name="name" type="text" required />
+                            </div>
+
+                            <div>
+                                <label for="email">Email</label>
+                                <input id="email" name="email" type="email" required />
+                            </div>
+
+                            <div>
+                                <label for="interest">I’m interested in</label>
+                                <select id="interest" name="interest">
+                                    <option value="acquisition">Acquiring an available painting</option>
+                                    <option value="commission">Commissioning a new work</option>
+                                    <option value="print">Prints / editions</option>
+                                    <option value="visit">Studio visit (NYC)</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message"
+                                    placeholder="If you’re writing about a specific piece, mention its title and where you are based."></textarea>
+                            </div>
+
+                            <button class="btn" type="submit">
+                                Send inquiry
+                            </button>
+                        </form>
+                    </article>
+
+                    <article class="info-card">
+                        <div class="info-card-title">Practical notes</div>
+                        <div class="stack">
+                            <p class="contact-note">
+                                • Works ship from New York City, usually via UPS or FedEx.<br />
+                                • Paintings can also be picked up in person from the studio.<br />
+                                • Payment is typically via bank transfer, Zelle, or card.
+                            </p>
+                            <p class="contact-note">
+                                If you’re a curator, writer, or another artist and want to talk
+                                about the work in a non-transactional way, you’re very welcome to
+                                reach out using the same form—just mention that in your message.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <div class="footer-inner">
+            <span>© <span id="year"></span> Muzzammil Mehdi</span>
+            <span class="muted">
+                Instagram: <a href="https://instagram.com/muzaliini" target="_blank" rel="noreferrer">@muzaliini</a>
+            </span>
+        </div>
+    </footer>
+
+    <script>
+        function scrollToSection(id) {
+            const el = document.getElementById(id);
+            if (!el) return;
+            window.scrollTo({
+                top: el.getBoundingClientRect().top + window.scrollY - 20,
+                behavior: "smooth",
+            });
+        }
+
+        function setFilter(filter) {
+            const cards = document.querySelectorAll(".artwork-card");
+            cards.forEach((card) => {
+                const status = card.getAttribute("data-status");
+                if (filter === "all") {
+                    card.style.display = "";
+                } else {
+                    card.style.display = status === filter ? "" : "none";
+                }
+            });
+
+            document.querySelectorAll(".filter-chip").forEach((chip) => {
+                chip.classList.toggle(
+                    "active",
+                    chip.getAttribute("data-filter") === filter
+                );
+            });
+        }
+
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        // ---------- Dynamic artworks from artworks.json ----------
+        async function loadArtworks() {
+            try {
+                const res = await fetch("artworks.json", { cache: "no-store" });
+                if (!res.ok) throw new Error("Failed to load artworks.json");
+                const data = await res.json();
+                renderArtworks(data.artworks || []);
+            } catch (err) {
+                console.error(err);
+                const grid = document.getElementById("artworkGrid");
+                if (grid) {
+                    grid.innerHTML =
+                        '<p class="muted">Unable to load artworks at the moment.</p>';
+                }
+            }
+        }
+
+        function renderArtworks(artworks) {
+            const grid = document.getElementById("artworkGrid");
+            if (!grid) return;
+            grid.innerHTML = "";
+
+            artworks.forEach((art) => {
+                const card = document.createElement("article");
+                card.className = "artwork-card";
+                card.setAttribute("data-status", art.status || "available");
+
+                const priceHtml = getPriceHtml(art);
+
+                card.innerHTML = `
+        <img
+          src="${art.image || ""}"
+          alt="Painting titled '${escapeHtml(art.title || "")}'"
+          class="artwork-image"
+          loading="lazy"
+        />
+        <div class="artwork-body">
+          <div class="artwork-title-row">
+            <div class="artwork-title">${escapeHtml(art.title || "")}</div>
+            <div class="artwork-year">${art.year || ""}</div>
+          </div>
+          <div class="artwork-meta">
+            ${escapeHtml(art.medium || "")}${art.size ? " · " + escapeHtml(art.size) : ""
+                    }
+          </div>
+          <div class="artwork-footer">
+            <span class="badge ${art.status === "sold" ? "sold" : "available"
+                    }">
+              ${art.status === "sold" ? "Sold" : "Available"}
+            </span>
+            ${priceHtml}
+          </div>
+        </div>
+      `;
+
+                // Optional: clicking a card scrolls to contact with prefilled message idea
+                card.addEventListener("click", () => {
+                    const msg = document.getElementById("message");
+                    if (msg && art.title) {
+                        msg.value =
+                            `I’m interested in “${art.title}” (${art.year}). ` +
+                            `Please let me know availability and pricing.\n\n` +
+                            msg.value;
+                    }
+                    scrollToSection("contact");
+                });
+
+                grid.appendChild(card);
+            });
+        }
+
+        function getPriceHtml(art) {
+            const display = art.price_display || "request";
+            if (display === "number" && typeof art.price === "number") {
+                const formatted = new Intl.NumberFormat("en-US", {
+                    style: "currency",
+                    currency: "USD",
+                    maximumFractionDigits: 0,
+                }).format(art.price);
+                return `<span class="price">${formatted}</span>`;
+            }
+            if (display === "note-only" && art.note) {
+                return `<span class="price price-muted">${escapeHtml(art.note)}</span>`;
+            }
+            // default: request price
+            return `<span class="price price-muted">Request price</span>`;
+        }
+
+        function escapeHtml(str) {
+            return String(str)
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#39;");
+        }
+
+        // Load artworks on page load
+        loadArtworks();
+    </script>
+
+</body>
+
+</html>

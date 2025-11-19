@@ -1,0 +1,47 @@
+backend:
+  name: git-gateway
+  branch: main   # or 'master' if that’s your default branch
+
+media_folder: "paintings"   # where uploaded images go in the repo
+public_folder: "/paintings" # how they’re referenced in the site
+
+local_backend: true
+
+collections:
+  # Single JSON file containing all artworks
+  - label: "Artworks"
+    name: "artworks"
+    files:
+      - label: "Artworks List"
+        name: "artworks_list"
+        file: "artworks.json"
+        extension: "json"
+        format: "json"
+        fields:
+          - label: "Artworks"
+            name: "artworks"
+            widget: "list"
+            collapsed: false
+            summary: "{{fields.title}} ({{fields.status}})"
+            fields:
+              - { label: "Slug (internal ID)", name: "slug", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Year", name: "year", widget: "number", value_type: "int" }
+              - { label: "Medium", name: "medium", widget: "string" }
+              - { label: "Size", name: "size", widget: "string", hint: "e.g. 24 × 18 in" }
+              - label: "Status"
+                name: "status"
+                widget: "select"
+                options:
+                  - { label: "Available", value: "available" }
+                  - { label: "Sold / Placed", value: "sold" }
+              - label: "Price Display"
+                name: "price_display"
+                widget: "select"
+                options:
+                  - { label: "Show number", value: "number" }
+                  - { label: "Request price", value: "request" }
+                  - { label: "Note only (no price)", value: "note-only" }
+              - { label: "Price (USD)", name: "price", widget: "number", required: false }
+              - { label: "Note (e.g. 'Private collection')", name: "note", widget: "string", required: false }
+              - { label: "Image", name: "image", widget: "image" }
