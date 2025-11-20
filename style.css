@@ -131,6 +131,7 @@ a:hover {
   font-size: 2rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
+  word-wrap: break-word;
 }
 
 .brand-subtitle {
