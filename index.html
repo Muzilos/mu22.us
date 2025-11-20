@@ -5,137 +5,105 @@
     <meta charset="UTF-8" />
     <title>Muzzammil Mehdi — Paintings</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-        name="description"
-        content="Gestural figurative paintings, interiors, and nocturnes by New York–based painter Muzzammil Mehdi."
-    />
-    <link id="themeStylesheet" rel="stylesheet" href="style.css">
-
+    <meta name="description"
+        content="Figurative interiors, nocturnes, and bodies dissolving into space by New York–based painter Muzzammil Mehdi." />
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-    <div class="site">
-        <header>
+    <div class="page">
+        <!-- HEADER -->
+        <header class="site-header">
             <div class="brand">
                 <div class="brand-title">Muzzammil&nbsp;Mehdi</div>
-                <div class="brand-subtitle">Painting &amp; Drawing</div>
+                <div class="brand-subtitle">Paintings &amp; Drawings</div>
                 <div class="brand-meta">New York City</div>
             </div>
-            <nav aria-label="Main navigation">
-                <button class="nav-link primary" onclick="scrollToSection('available')">
-                    Available works
-                </button>
-                <button class="nav-link" onclick="scrollToSection('commissions')">
-                    Commission a painting
-                </button>
-                <button class="nav-link" onclick="scrollToSection('prints')">
-                    Prints
-                </button>
-                <button class="nav-link" onclick="scrollToSection('about')">
-                    About
-                </button>
-                <button class="nav-link" onclick="scrollToSection('contact')">
-                    Contact
-                </button>
+
+            <nav class="site-nav" aria-label="Main navigation">
+                <button class="nav-link" data-scroll-target="work">Work</button>
+                <button class="nav-link" data-scroll-target="commissions">Commissions</button>
+                <button class="nav-link" data-scroll-target="about">About &amp; Contact</button>
             </nav>
         </header>
 
+        <!-- HERO -->
         <main>
-            <!-- Hero -->
             <section class="hero" aria-label="Overview">
-                <div>
+                <div class="hero-text">
                     <h1 class="hero-title">
-                        Paintings of bodies, rooms, streets, and the air around them.
+                        Figurative interiors, nocturnes, and bodies dissolving into space.
                     </h1>
                     <p class="hero-body">
-                        I work from observation, memory, and accident. Figures hunch, reach, or
-                        dissolve into the space around them; heads become bowls, coats stand in
-                        for missing bodies, architecture tilts into shadow. The surfaces are
-                        reworked and scraped back—nothing is too fixed, everything is in process.
+                        Paintings built slowly from observation, memory, and accident: scraped surfaces,
+                        leaning bodies, rooms tilting toward shadow.
                     </p>
-                    <div class="hero-tags">
-                        <span class="pill">Figures · Interiors · Night Walks</span>
-                        <span class="pill">Oil on Canvas &amp; Paper</span>
-                    </div>
                 </div>
-                <div class="hero-meta-box">
-                    <div class="hero-meta-label">Collector notes</div>
-                    <div>
-                        • This site shows a small group of recent works, 2023–2025.<br />
-                        • Paintings marked <strong>Available</strong> can be acquired directly.<br />
-                        • Studio visits in NYC are possible; online conversations are welcome if you’re elsewhere.
-                    </div>
-                </div>
-            </section>
-
-            <!-- Work themes / orientation -->
-            <section aria-label="Themes in the work">
-                <div class="card-row">
-                    <article class="info-card">
-                        <div class="info-card-title">Bodies under pressure</div>
-                        <p class="info-card-note">
-                            Many of the paintings begin with the figure: a back turned away, a
-                            crouched body on a bed, someone leaning into the dark. I’m interested
-                            less in likeness and more in posture—how a body can read as tired,
-                            alert, devotional, or absent with just a few marks.
-                        </p>
-                    </article>
-
-                    <article class="info-card">
-                        <div class="info-card-title">Rooms, streets, and headspace</div>
-                        <p class="info-card-note">
-                            Other works drift toward interiors and city scenes: doorways, corridors,
-                            figures slipping in and out of frame. Sometimes the head becomes a
-                            container or a landscape. The paintings sit between narrative and
-                            abstraction, like a half-remembered moment you can’t quite place.
-                        </p>
-                    </article>
+                <div class="hero-side">
+                    <div class="hero-note-label">For collectors</div>
+                    <p class="hero-note">
+                        • Available works are listed with prices or marked “Request price”.<br />
+                        • Commissions are possible at three scales.<br />
+                        • Studio visits in NYC and online conversations worldwide.
+                    </p>
+                    <button class="btn hero-btn" data-scroll-target="work">
+                        View available work
+                    </button>
                 </div>
             </section>
 
-            <!-- Works -->
-            <section id="available">
+            <!-- WORK -->
+            <section id="work" class="section">
                 <div class="section-header">
-                    <h2 class="section-title">Available works</h2>
-                    <div class="section-note">
-                        Selected paintings and works on paper. Details and additional views on request.
-                    </div>
+                    <h2 class="section-title">Available work</h2>
+                    <p class="section-note">
+                        Selected recent paintings and works on canvas.
+                    </p>
                 </div>
 
                 <div class="work-filters" aria-label="Filter works">
-                    <button class="filter-chip active" data-filter="all" onclick="setFilter('all')">
-                        All
-                    </button>
-                    <button class="filter-chip" data-filter="available" onclick="setFilter('available')">
-                        Available only
-                    </button>
-                    <button class="filter-chip" data-filter="sold" onclick="setFilter('sold')">
-                        Sold / in collections
-                    </button>
+                    <button class="filter-chip active" data-filter="all">All</button>
+                    <button class="filter-chip" data-filter="available">Available</button>
+                    <button class="filter-chip" data-filter="reserved">Reserved</button>
+                    <button class="filter-chip" data-filter="sold">Sold</button>
                 </div>
 
                 <div class="artwork-grid" id="artworkGrid"></div>
+
+                <p class="section-footnote">
+                    Detailed images, framing options, and shipping quotes available on request.
+                </p>
             </section>
 
-            <!-- Commissions + Prints -->
-            <section id="commissions">
+            <!-- COMMISSIONS -->
+            <section id="commissions" class="section">
                 <div class="section-header">
-                    <h2 class="section-title">Commission a painting</h2>
-                    <div class="section-note">
+                    <h2 class="section-title">Commissions</h2>
+                    <p class="section-note">
                         For people who want a piece made with them in mind.
-                    </div>
+                    </p>
                 </div>
 
-                <div class="card-row">
-                    <!-- Commissions -->
+                <div class="card-grid">
                     <article class="info-card">
-                        <div class="info-card-title">How commissions work</div>
-                        <p class="info-card-note">
-                            I take on a small number of commissions each year. The work stays
-                            close to my studio practice—gestural, slightly uneasy, somewhere
-                            between figure and space. Think of it as inviting a particular kind
-                            of painting into your life, rather than ordering an illustration.
+                        <h3 class="info-card-title">How it works</h3>
+                        <p class="info-card-text">
+                            I take on a small number of commissions each year. The work stays close to my studio
+                            practice: gestural, slightly uneasy, somewhere between figure and space. Think of it as
+                            inviting a particular kind of painting into your life, rather than ordering a portrait
+                            or illustration.
                         </p>
+                        <p class="info-card-text">
+                            We start with a short call or email exchange about scale, mood, and where the work will
+                            live. You’ll see a rough plan up front and a set of progress photos along the way.
+                        </p>
+                        <button class="btn" data-scroll-target="contact">
+                            Start a commission inquiry
+                        </button>
+                    </article>
+
+                    <article class="info-card">
+                        <h3 class="info-card-title">Typical scales</h3>
 
                         <div class="tiers">
                             <div class="tier">
@@ -143,10 +111,10 @@
                                     <span class="tier-name">Small</span>
                                     <span class="tier-price">From $1,500</span>
                                 </div>
-                                <div class="tier-meta">
-                                    ~18 × 14 in. Often an intimate figure, head, or fragment of a
-                                    room. Good for apartments, hallways, and bedside walls.
-                                </div>
+                                <p class="tier-meta">
+                                    ~18 × 14 in. Intimate heads, fragments of a room, or a figure in a tight space.
+                                    Good for apartments, hallways, or bedside walls.
+                                </p>
                             </div>
 
                             <div class="tier">
@@ -154,11 +122,11 @@
                                     <span class="tier-name">Medium</span>
                                     <span class="tier-price">From $3,200</span>
                                 </div>
-                                <div class="tier-meta">
-                                    ~30 × 24 in. A more developed situation: a body in space, a
-                                    doorway, a table, or a night scene. We talk about mood,
-                                    palette, and what should feel present or absent.
-                                </div>
+                                <p class="tier-meta">
+                                    ~30 × 24 in. A more developed situation: a body in space, a doorway, a table,
+                                    or a night walk. We talk about palette, light, and what should feel present or
+                                    absent.
+                                </p>
                             </div>
 
                             <div class="tier">
@@ -166,166 +134,161 @@
                                     <span class="tier-name">Large</span>
                                     <span class="tier-price">From $5,500</span>
                                 </div>
-                                <div class="tier-meta">
-                                    40 in and up. For statement walls or public-facing spaces.
-                                    These works tend to be slower, layered, and more architectural.
-                                    Timeline, framing, and installation are discussed individually.
-                                </div>
+                                <p class="tier-meta">
+                                    40 in and up. For statement walls or semi-public spaces. These works are layered,
+                                    architectural, and slower to build. Timeline, framing, and installation are
+                                    discussed
+                                    case by case.
+                                </p>
                             </div>
                         </div>
 
-                        <p class="info-card-note">
-                            I don’t take on photoreal copies of photos or “match the sofa”
-                            projects—but I’m happy to translate a story, a room, or a recurring
-                            dream into this language of paint.
+                        <p class="info-card-text small">
+                            I don’t take on photoreal copies of photos or “match the sofa” projects, but I’m happy
+                            to translate a story, a room, or a recurring dream into this language of paint.
+                        </p>
+                    </article>
+                </div>
+            </section>
+
+            <!-- ABOUT & CONTACT -->
+            <section id="about" class="section">
+                <div class="section-header">
+                    <h2 class="section-title">About &amp; Contact</h2>
+                    <p class="section-note">
+                        A brief orientation and a direct way to reach me.
+                    </p>
+                </div>
+
+                <div class="card-grid">
+                    <!-- About text -->
+                    <article class="info-card">
+                        <h3 class="info-card-title">About the work</h3>
+                        <p class="info-card-text">
+                            I’m a painter based in New York City. The work grows out of long sessions with the
+                            figure, drawings made in the street, and a lot of repainting. I’m drawn to awkward
+                            poses, half-lit corners, and images that feel like they’re arriving and erasing
+                            themselves at the same time.
+                        </p>
+                        <p class="info-card-text">
+                            Surfaces are built slowly: thin scrapes of color next to thick ridges of paint, muddy
+                            browns against sour greens, bruised pinks and asphalt blues. I’m interested in how much
+                            a scene can be reduced before it falls apart—and how far it can be pushed without losing
+                            the sense of a body or a place.
+                        </p>
+                        <p class="info-card-text small">
+                            Works are held in private collections; studio visits in NYC are possible by appointment.
+                        </p>
+                    </article>
+
+                    <!-- Contact form -->
+                    <article id="contact" class="info-card">
+                        <h3 class="info-card-title">Collector inquiries</h3>
+                        <p class="info-card-text">
+                            For acquisitions, commissions, prints, studio visits, or curatorial conversations.
                         </p>
 
-                        <a class="btn" href="#contact">
-                            Start a commission inquiry
-                        </a>
-                    </article>
+                        <!-- Netlify-ready contact form -->
+                        <form id="contactForm" class="contact-form" name="collector-contact" method="POST"
+                            data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html">
+                            <!-- Hidden form name for Netlify -->
+                            <input type="hidden" name="form-name" value="collector-contact" />
 
-                    <!-- Prints -->
-                    <article id="prints" class="info-card">
-                        <div class="info-card-title">Prints &amp; editions</div>
-                        <div class="stack">
-                            <p class="info-card-note">
-                                A few paintings and works on paper—often the more narrative or
-                                surreal pieces—are available as archival pigment prints, signed
-                                and numbered in small editions.
-                            </p>
-                            <ul class="muted" style="padding-left: 18px; margin: 0; font-size: 0.85rem;">
-                                <li>Edition sizes typically 20–30.</li>
-                                <li>Cotton rag paper, museum-grade inks.</li>
-                                <li>Ships unframed, worldwide from NYC.</li>
-                            </ul>
-                            <p class="contact-note">
-                                I’m in the process of setting up a simple checkout for prints. For
-                                now, please use the contact form—mention which image you’re
-                                interested in (or describe it) and where you’re based.
-                            </p>
-                            <a class="btn outline" href="#contact">
-                                Ask about available prints
-                            </a>
-                        </div>
-                    </article>
-                </div>
-            </section>
+                            <!-- Optional: clearer subject for Netlify emails -->
+                            <input type="hidden" name="subject" value="New collector inquiry from website" />
 
-            <!-- About -->
-            <section id="about">
-                <div class="section-header">
-                    <h2 class="section-title">About the work</h2>
-                    <div class="section-note">
-                        Enough context to orient you; the rest is in the paintings.
-                    </div>
-                </div>
+                            <!-- Honeypot field -->
+                            <div style="display:none;">
+                                <label>
+                                    Don’t fill this out if you’re human:
+                                    <input name="bot-field" />
+                                </label>
+                            </div>
 
-                <article class="info-card">
-                    <p class="stack">
-                        <span>
-                            I’m a painter living and working in New York City, currently
-                            completing my MFA. The work grows out of long sessions with the
-                            figure, drawings in the street, and a lot of repainting. I’m drawn to
-                            awkward poses, half-lit corners, and images that feel like they’re
-                            arriving and erasing themselves at the same time.
-                        </span>
-                        <span>
-                            Surfaces are built slowly: thin scrapes of color next to thick
-                            ridges of paint, muddy browns against sour greens, bruised pinks and
-                            asphalt blues. I’m interested in how much a scene can be reduced
-                            before it falls apart—and how far it can be pushed without losing the
-                            sense of a body or a place.
-                        </span>
-                        <span class="info-card-note">
-                            This site is intentionally tight: a handful of paintings that feel
-                            representative of the current studio, clear information for
-                            collectors, and a direct way to get in touch.
-                        </span>
-                    </p>
-                </article>
-            </section>
 
-            <!-- Contact -->
-            <section id="contact">
-                <div class="section-header">
-                    <h2 class="section-title">Collector inquiries</h2>
-                    <div class="section-note">
-                        For acquisitions, commissions, prints, or studio visits.
-                    </div>
-                </div>
-
-                <div class="contact-grid">
-                    <article class="info-card">
-                        <!-- Replace your@email.com with your actual email -->
-                        <form action="mailto:your@email.com" method="post" enctype="text/plain">
-                            <div>
+                            <div class="form-field">
                                 <label for="name">Name</label>
-                                <input id="name" name="name" type="text" required />
+                                <input id="name" name="name" type="text" autocomplete="name" required />
                             </div>
 
-                            <div>
+                            <div class="form-field">
                                 <label for="email">Email</label>
-                                <input id="email" name="email" type="email" required />
+                                <input id="email" name="email" type="email" autocomplete="email" required />
                             </div>
 
-                            <div>
+                            <div class="form-field">
                                 <label for="interest">I’m interested in</label>
                                 <select id="interest" name="interest">
-                                    <option value="acquisition">Acquiring an available painting</option>
-                                    <option value="commission">Commissioning a new work</option>
+                                    <option value="acquisition">Acquiring an available work</option>
+                                    <option value="commission">Commissioning a painting</option>
                                     <option value="print">Prints / editions</option>
                                     <option value="visit">Studio visit (NYC)</option>
-                                    <option value="other">Other</option>
+                                    <option value="other">Other / conversation</option>
                                 </select>
                             </div>
 
-                            <div>
+                            <div class="form-field">
                                 <label for="message">Message</label>
-                                <textarea
-                                    id="message"
-                                    name="message"
-                                    placeholder="If you’re writing about a specific piece, mention its title (or describe it) and where you’re based."
-                                ></textarea>
+                                <textarea id="message" name="message"
+                                    placeholder="If you’re writing about a specific work, mention its title (or describe it) and where you’re based."></textarea>
                             </div>
 
-                            <button class="btn" type="submit">
-                                Send inquiry
-                            </button>
+                            <button class="btn btn-full" type="submit">Send inquiry</button>
                         </form>
-                    </article>
 
-                    <article class="info-card">
-                        <div class="info-card-title">Practical notes</div>
-                        <div class="stack">
-                            <p class="contact-note">
-                                • Works ship from New York City, usually via UPS or FedEx.<br />
-                                • Paintings can also be picked up in person from the studio.<br />
-                                • Payment is typically via bank transfer, Zelle, or card.
-                            </p>
-                            <p class="contact-note">
-                                If you’re a curator, writer, or another artist and want to talk
-                                about the work in a non-transactional way, you’re very welcome to
-                                reach out using the same form—just mention that in your message.
-                            </p>
-                        </div>
+                        <p class="info-card-text small">
+                            Works typically ship from New York via UPS or FedEx. Payment is usually by bank
+                            transfer, Zelle, or card. If you’re a curator, writer, or another artist and want to
+                            talk about the work in a non-transactional way, you’re very welcome to reach out.
+                        </p>
                     </article>
                 </div>
             </section>
         </main>
+
+        <!-- FOOTER -->
+        <footer class="site-footer">
+            <div class="footer-inner">
+                <span>© <span id="year"></span> Muzzammil Mehdi</span>
+                <span class="muted">
+                    Instagram:
+                    <a href="https://instagram.com/muzaliini" target="_blank" rel="noreferrer">@muzaliini</a>
+                </span>
+            </div>
+        </footer>
     </div>
 
-    <footer>
-        <div class="footer-inner">
-            <span>© <span id="year"></span> Muzzammil Mehdi</span>
-            <span class="muted">
-                Instagram:
-                <a href="https://instagram.com/muzaliini" target="_blank" rel="noreferrer">@muzaliini</a>
-            </span>
-        </div>
-    </footer>
+    <!-- ARTWORK MODAL -->
+    <div id="artworkModal" class="modal" aria-hidden="true">
+        <div class="modal-backdrop" data-modal-close></div>
+        <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <button class="modal-close" type="button" data-modal-close>&times;</button>
+            <div class="modal-layout">
+                <div class="modal-image-wrap">
+                    <img id="modalImage" src="" alt="" />
+                </div>
+                <div class="modal-body">
+                    <h2 id="modalTitle" class="modal-title"></h2>
+                    <p id="modalMeta" class="modal-meta"></p>
+                    <p id="modalDescription" class="modal-description"></p>
 
-    <script src="main.js"></script>
-    <script src="themes.js"></script>
+                    <div class="modal-tags" id="modalTags"></div>
+
+                    <div class="modal-cta">
+                        <div class="modal-status" id="modalStatus"></div>
+                        <button class="btn btn-full" id="modalInquireButton" type="button">
+                            Inquire about this work
+                        </button>
+                    </div>
+                    <p class="modal-note">
+                        The inquiry form will open with this work’s title pre-filled.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js" defer></script>
 </body>
+
 </html>

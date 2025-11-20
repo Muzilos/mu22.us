@@ -1,129 +1,255 @@
-function scrollToSection(id) {
-    const el = document.getElementById(id);
-    if (!el) return;
-    window.scrollTo({
-        top: el.getBoundingClientRect().top + window.scrollY - 20,
-        behavior: "smooth",
-    });
+// --------- Artwork data will be loaded from artworks.json ---------
+let artworks = [];
+let currentFilter = "all";
+
+// --------- Helpers ---------
+
+function statusLabel(status) {
+  if (status === "available") return "Available";
+  if (status === "reserved") return "Reserved";
+  if (status === "sold") return "Sold";
+  return "";
 }
 
-function setFilter(filter) {
-    const cards = document.querySelectorAll(".artwork-card");
-    cards.forEach((card) => {
-        const status = card.getAttribute("data-status");
-        if (filter === "all") {
-            card.style.display = "";
-        } else {
-            card.style.display = status === filter ? "" : "none";
-        }
-    });
-
-    document.querySelectorAll(".filter-chip").forEach((chip) => {
-        chip.classList.toggle(
-            "active",
-            chip.getAttribute("data-filter") === filter
-        );
-    });
+function statusClass(status) {
+  if (status === "available") return "available";
+  if (status === "reserved") return "reserved";
+  if (status === "sold") return "sold";
+  return "";
 }
 
-document.getElementById("year").textContent = new Date().getFullYear();
+function priceDisplay(artwork) {
+  // artwork.price_display: "number" | "request" | etc.
+  if (artwork.status === "sold" && !artwork.price_display) return "";
+  if (artwork.price_display === "request") return "Request price";
 
-// ---------- Dynamic artworks from artworks.json ----------
+  if (artwork.price_display === "number" && typeof artwork.price === "number") {
+    return `$${artwork.price.toLocaleString()}`;
+  }
+
+  return "";
+}
+
+// --------- Load artworks from JSON ---------
+
 async function loadArtworks() {
-    try {
-        const res = await fetch("artworks.json", { cache: "no-store" });
-        if (!res.ok) throw new Error("Failed to load artworks.json");
-        const data = await res.json();
-        renderArtworks(data.artworks || []);
-    } catch (err) {
-        console.error(err);
-        const grid = document.getElementById("artworkGrid");
-        if (grid) {
-            grid.innerHTML =
-                '<p class="muted">Unable to load artworks at the moment.</p>';
-        }
+  try {
+    const res = await fetch("artworks.json", { cache: "no-store" });
+    const data = await res.json();
+    if (Array.isArray(data.artworks)) {
+      artworks = data.artworks;
+    } else {
+      artworks = [];
     }
+  } catch (err) {
+    console.error("Error loading artworks.json", err);
+    artworks = [];
+  }
+
+  renderArtworkGrid();
 }
 
-function renderArtworks(artworks) {
-    const grid = document.getElementById("artworkGrid");
-    if (!grid) return;
-    grid.innerHTML = "";
+// --------- Rendering the grid ---------
 
-    artworks.forEach((art) => {
-        const card = document.createElement("article");
-        card.className = "artwork-card";
-        card.setAttribute("data-status", art.status || "available");
+function renderArtworkGrid() {
+  const grid = document.getElementById("artworkGrid");
+  if (!grid) return;
 
-        const priceHtml = getPriceHtml(art);
+  grid.innerHTML = "";
 
-        card.innerHTML = `
-        <img
-          src="${art.image || ""}"
-          alt="Painting titled '${escapeHtml(art.title || "")}'"
-          class="artwork-image"
-          loading="lazy"
-        />
-        <div class="artwork-body">
-          <div class="artwork-title-row">
-            <div class="artwork-title">${escapeHtml(art.title || "")}</div>
-            <div class="artwork-year">${art.year || ""}</div>
-          </div>
-          <div class="artwork-meta">
-            ${escapeHtml(art.medium || "")}${art.size ? " · " + escapeHtml(art.size) : ""
-            }
-          </div>
-          <div class="artwork-footer">
-            <span class="badge ${art.status === "sold" ? "sold" : "available"
-            }">
-              ${art.status === "sold" ? "Sold" : "Available"}
-            </span>
-            ${priceHtml}
-          </div>
+  const filtered = artworks.filter((artwork) => {
+    if (currentFilter === "all") return true;
+    return artwork.status === currentFilter;
+  });
+
+  filtered.forEach((artwork) => {
+    const card = document.createElement("article");
+    card.className = "artwork-card";
+    card.dataset.slug = artwork.slug;
+
+    const priceText = priceDisplay(artwork);
+
+    card.innerHTML = `
+      <div class="artwork-image-wrap">
+        <img src="${artwork.image}" alt="${artwork.title}" loading="lazy" />
+      </div>
+      <div class="artwork-body">
+        <div class="artwork-title-row">
+          <div class="artwork-title">${artwork.title}</div>
+          <div class="artwork-year">${artwork.year || ""}</div>
         </div>
-      `;
+        <div class="artwork-meta">
+          ${artwork.size || ""}${
+      artwork.medium ? ` · ${artwork.medium}` : ""
+    }
+        </div>
+        <div class="artwork-footer">
+          <span class="badge ${statusClass(artwork.status)}">
+            ${statusLabel(artwork.status)}
+          </span>
+          <span class="price ${
+            artwork.status === "sold" ? "price-muted" : ""
+          }">
+            ${priceText}
+          </span>
+        </div>
+      </div>
+    `;
 
-        // Optional: clicking a card scrolls to contact with prefilled message idea
-        card.addEventListener("click", () => {
-            const msg = document.getElementById("message");
-            if (msg && art.title) {
-                msg.value =
-                    `I’m interested in “${art.title}” (${art.year}). ` +
-                    `Please let me know availability and pricing.\n\n` +
-                    msg.value;
-            }
-            scrollToSection("contact");
-        });
-
-        grid.appendChild(card);
+    card.addEventListener("click", () => {
+      openArtworkModal(artwork.slug);
     });
+
+    grid.appendChild(card);
+  });
 }
 
-function getPriceHtml(art) {
-    const display = art.price_display || "request";
-    if (display === "number" && typeof art.price === "number") {
-        const formatted = new Intl.NumberFormat("en-US", {
-            style: "currency",
-            currency: "USD",
-            maximumFractionDigits: 0,
-        }).format(art.price);
-        return `<span class="price">${formatted}</span>`;
+// --------- Filters ---------
+
+function setupFilters() {
+  const chips = document.querySelectorAll(".filter-chip");
+  chips.forEach((chip) => {
+    chip.addEventListener("click", () => {
+      const filter = chip.dataset.filter;
+      if (!filter) return;
+
+      currentFilter = filter;
+
+      chips.forEach((c) => c.classList.remove("active"));
+      chip.classList.add("active");
+
+      renderArtworkGrid();
+    });
+  });
+}
+
+// --------- Smooth scroll for nav & buttons ---------
+
+function setupSmoothScroll() {
+  const triggers = document.querySelectorAll("[data-scroll-target]");
+  triggers.forEach((el) => {
+    el.addEventListener("click", (e) => {
+      const targetId = el.dataset.scrollTarget;
+      if (!targetId) return;
+
+      const section = document.getElementById(targetId);
+      if (!section) return;
+
+      e.preventDefault();
+      const y = section.getBoundingClientRect().top + window.scrollY - 80;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    });
+  });
+}
+
+// --------- Modal logic ---------
+
+function findArtwork(slug) {
+  return artworks.find((a) => a.slug === slug);
+}
+
+function openArtworkModal(slug) {
+  const artwork = findArtwork(slug);
+  if (!artwork) return;
+
+  const modal = document.getElementById("artworkModal");
+  if (!modal) return;
+
+  const img = document.getElementById("modalImage");
+  const titleEl = document.getElementById("modalTitle");
+  const metaEl = document.getElementById("modalMeta");
+  const descEl = document.getElementById("modalDescription");
+  const tagsEl = document.getElementById("modalTags");
+  const statusEl = document.getElementById("modalStatus");
+  const inquireBtn = document.getElementById("modalInquireButton");
+
+  img.src = artwork.image;
+  img.alt = artwork.title;
+  titleEl.textContent = artwork.title;
+  metaEl.textContent = `${artwork.year || ""}${
+    artwork.size ? ` · ${artwork.size}` : ""
+  }${artwork.medium ? ` · ${artwork.medium}` : ""}`;
+
+  // No dedicated description in JSON; you can add one later if needed.
+  descEl.textContent = artwork.description || "";
+
+  // Clear tags (no tags field in JSON by default)
+  tagsEl.innerHTML = "";
+
+  // status + price + note
+  const priceText = priceDisplay(artwork);
+  let statusText = statusLabel(artwork.status);
+  if (priceText) statusText += ` • ${priceText}`;
+  if (artwork.note) {
+    statusText += statusText ? ` — ${artwork.note}` : artwork.note;
+  }
+  statusEl.textContent = statusText;
+
+  // Inquire button: scrolls to contact form + prefill message
+  inquireBtn.onclick = () => {
+    const messageField = document.getElementById("message");
+    const interestField = document.getElementById("interest");
+    const contactSection = document.getElementById("contact");
+    if (interestField) {
+      interestField.value = "acquisition";
     }
-    if (display === "note-only" && art.note) {
-        return `<span class="price price-muted">${escapeHtml(art.note)}</span>`;
+    if (messageField) {
+      const prefix = `I’m writing about “${artwork.title}” (${artwork.year || ""}${
+        artwork.size ? `, ${artwork.size}` : ""
+      }). `;
+      if (!messageField.value.startsWith(prefix)) {
+        messageField.value = prefix + "\n\n";
+      }
     }
-    // default: request price
-    return `<span class="price price-muted">Request price</span>`;
+    closeArtworkModal();
+    if (contactSection) {
+      const y =
+        contactSection.getBoundingClientRect().top + window.scrollY - 80;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  };
+
+  modal.classList.add("is-open");
+  modal.setAttribute("aria-hidden", "false");
 }
 
-function escapeHtml(str) {
-    return String(str)
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#39;");
+function closeArtworkModal() {
+  const modal = document.getElementById("artworkModal");
+  if (!modal) return;
+  modal.classList.remove("is-open");
+  modal.setAttribute("aria-hidden", "true");
 }
 
-// Load artworks on page load
-loadArtworks();
+function setupModal() {
+  const modal = document.getElementById("artworkModal");
+  if (!modal) return;
+
+  const closeEls = modal.querySelectorAll("[data-modal-close]");
+  closeEls.forEach((el) => {
+    el.addEventListener("click", () => closeArtworkModal());
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      closeArtworkModal();
+    }
+  });
+}
+
+// --------- Footer year ---------
+
+function setCurrentYear() {
+  const yearEl = document.getElementById("year");
+  if (!yearEl) return;
+  yearEl.textContent = new Date().getFullYear();
+}
+
+// --------- Init ---------
+
+document.addEventListener("DOMContentLoaded", () => {
+  loadArtworks();
+  setupFilters();
+  setupSmoothScroll();
+  setupModal();
+  setCurrentYear();
+});
