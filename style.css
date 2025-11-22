@@ -736,6 +736,181 @@ textarea:focus {
   justify-content: center;
 }
 
+
+/* Featured carousel */
+
+.featured-wrap {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.featured {
+  border-radius: 0;
+  border: 3px solid var(--border);
+  background: #ffffff;
+  padding: 14px 14px 16px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 14px;
+}
+
+@media (min-width: 880px) {
+  .featured {
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    align-items: stretch;
+  }
+}
+
+.featured-media {
+  border-radius: 0;
+  border: 2px solid var(--border);
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+  min-height: 220px;
+}
+
+/* Individual slides are stacked; JS should toggle .is-active to fade between them */
+.featured-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.35s ease-in-out;
+}
+
+.featured-slide.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.featured-media img {
+  width: 100%;
+  height: 100%;
+  max-height: 480px;
+  object-fit: contain;
+}
+
+/* Slightly lower max height on small screens so the text is still visible without scrolling */
+@media (max-width: 599px) {
+  .featured-media img {
+    max-height: 360px;
+  }
+}
+
+.featured-body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.88rem;
+}
+
+.featured-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+}
+
+.featured-title {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 0.98rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+.featured-meta {
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.featured-description {
+  font-size: 0.86rem;
+  color: var(--muted);
+}
+
+.featured-status-row {
+  margin-top: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  font-size: 0.8rem;
+}
+
+.featured-status-row .badge {
+  margin-right: 4px;
+}
+
+.featured-price-note {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+/* Pagination / controls */
+
+.featured-controls {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.78rem;
+}
+
+.featured-arrows {
+  display: flex;
+  gap: 6px;
+}
+
+.featured-arrow {
+  border-radius: 0;
+  border: 2px solid var(--border);
+  background: #ffffff;
+  width: 30px;
+  height: 30px;
+  font-size: 0.78rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.featured-arrow:hover {
+  background: #000000;
+  color: #ffffff;
+}
+
+.featured-dots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.featured-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 0;
+  border: 2px solid var(--border);
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.featured-dot.is-active {
+  background: #000000;
+}
+
+/* Optional: small note text below the controls */
+
+.featured-note {
+  margin-top: 6px;
+  font-size: 0.76rem;
+  color: var(--muted);
+}
+
 /* Utility */
 
 .muted {

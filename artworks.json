@@ -11,7 +11,8 @@
       "priceNote": "",
       "image": "images/09-30-2024 13.34.jpg",
       "tags": ["Figure", "Interior", "Object"],
-      "description": ""
+      "description": "",
+      "featured": true
     },
     {
       "slug": "crops-i",
@@ -24,7 +25,8 @@
       "priceNote": "",
       "image": "images/Crops I.png",
       "tags": ["Figure", "Interior", "Noctune"],
-      "description": ""
+      "description": "",
+      "featured": true
     },
     {
       "slug": "cow",
@@ -50,7 +52,8 @@
       "priceNote": "",
       "image": "images/IMG_20240408_164102_836.png",
       "tags": ["Figure", "Portrait", "Interior"],
-      "description": ""
+      "description": "",
+      "featured": true
     },
     {
       "slug": "sitting-figure",
