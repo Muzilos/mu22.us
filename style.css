@@ -617,13 +617,13 @@ textarea:focus {
 
 .modal-dialog {
   position: relative;
-  max-width: 960px;
+  max-width: 1100px;          /* was 960px */
   margin: 32px auto;
   background: #ffffff;
   border-radius: 0;
   border: 4px solid var(--border);
   box-shadow: none;
-  padding: 16px 16px 18px;
+  padding: 12px 12px 14px;    /* slightly tighter so the image feels bigger */
 }
 
 @media (min-width: 960px) {
@@ -640,7 +640,7 @@ textarea:focus {
 
 @media (min-width: 860px) {
   .modal-layout {
-    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); /* more weight on the image */
   }
 }
 
@@ -652,7 +652,8 @@ textarea:focus {
   display: flex;
   align-items: center;
   justify-content: center;
-  max-height: 70vh;
+  max-height: 80vh;         /* was 70vh – show more of the painting */
+  position: relative;       /* needed for nav buttons */
 }
 
 .modal-image-wrap img {
@@ -660,7 +661,7 @@ textarea:focus {
   max-height: 100%;
   width: 100%;
   height: auto;
-  object-fit: contain;
+  object-fit: contain;      /* ensures whole artwork is visible, no cropping */
 }
 
 .modal-body {
@@ -915,4 +916,46 @@ textarea:focus {
 
 .muted {
   color: var(--muted);
+}
+
+.modal-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  border-radius: 0;
+  border: 2px solid var(--border);
+  background: rgba(255, 255, 255, 0.9);
+  color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.1rem;
+  line-height: 1;
+  z-index: 2;
+}
+
+.modal-nav:hover {
+  background: #000000;
+  color: #ffffff;
+}
+
+.modal-nav-prev {
+  left: 6px;
+}
+
+.modal-nav-next {
+  right: 6px;
+}
+
+/* On small screens, pull arrows in slightly so they don't sit on the very edge */
+@media (max-width: 599px) {
+  .modal-nav-prev {
+    left: 2px;
+  }
+  .modal-nav-next {
+    right: 2px;
+  }
 }

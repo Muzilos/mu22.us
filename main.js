@@ -1,10 +1,14 @@
 // --------- Artwork data will be loaded from artworks.json ---------
 let artworks = [];
 let currentFilter = "all";
+// For modal navigation (next/prev)
+let currentSequence = [];     // array of slugs in the current view
+let currentModalIndex = -1;   // index into currentSequence
 // Featured carousel state
 let featuredArtworks = [];
 let featuredIndex = 0;
 let featuredIntervalId = null;
+
 
 // --------- Helpers ---------
 
@@ -49,8 +53,6 @@ async function loadArtworks() {
     console.error("Error loading artworks.json", err);
     artworks = [];
   }
-
-  renderArtworkGrid();
   // Render the main grid
   renderArtworkGrid();
 
@@ -71,6 +73,9 @@ function renderArtworkGrid() {
     return artwork.status === currentFilter;
   });
 
+  // Keep a navigation sequence that matches what the user sees
+  currentSequence = filtered.map((artwork) => artwork.slug);
+
   filtered.forEach((artwork) => {
     const card = document.createElement("article");
     card.className = "artwork-card";
@@ -88,15 +93,15 @@ function renderArtworkGrid() {
           <div class="artwork-year">${artwork.year || ""}</div>
         </div>
         <div class="artwork-meta">
-          ${artwork.size || ""}${artwork.medium ? ` · ${artwork.medium}` : ""
-      }
+          ${artwork.size || ""}${artwork.medium ? ` · ${artwork.medium}` : ""}
         </div>
         <div class="artwork-footer">
           <span class="badge ${statusClass(artwork.status)}">
             ${statusLabel(artwork.status)}
           </span>
-          <span class="price ${artwork.status === "sold" ? "price-muted" : ""
-      }">
+          <span class="price ${
+            artwork.status === "sold" ? "price-muted" : ""
+          }">
             ${priceText}
           </span>
         </div>
@@ -325,6 +330,17 @@ function openArtworkModal(slug) {
   const artwork = findArtwork(slug);
   if (!artwork) return;
 
+  // Keep modal index in sync with the currentSequence
+  const seqIndex = currentSequence.indexOf(slug);
+  if (seqIndex !== -1) {
+    currentModalIndex = seqIndex;
+  } else {
+    // Fallback: navigate over the full artworks list if slug not in currentSequence
+    const allIndex = artworks.findIndex((a) => a.slug === slug);
+    currentModalIndex = allIndex;
+    currentSequence = artworks.map((a) => a.slug);
+  }
+
   const modal = document.getElementById("artworkModal");
   if (!modal) return;
 
@@ -339,13 +355,14 @@ function openArtworkModal(slug) {
   img.src = artwork.image;
   img.alt = artwork.title;
   titleEl.textContent = artwork.title;
-  metaEl.textContent = `${artwork.year || ""}${artwork.size ? ` · ${artwork.size}` : ""
-    }${artwork.medium ? ` · ${artwork.medium}` : ""}`;
+  metaEl.textContent = `${artwork.year || ""}${
+    artwork.size ? ` · ${artwork.size}` : ""
+  }${artwork.medium ? ` · ${artwork.medium}` : ""}`;
 
-  // No dedicated description in JSON; you can add one later if needed.
+  // Description (if present in JSON)
   descEl.textContent = artwork.description || "";
 
-  // Clear tags (no tags field in JSON by default)
+  // Clear tags (you can extend this later if you add tags in JSON)
   tagsEl.innerHTML = "";
 
   // status + price + note
@@ -366,8 +383,9 @@ function openArtworkModal(slug) {
       interestField.value = "acquisition";
     }
     if (messageField) {
-      const prefix = `I’m writing about “${artwork.title}” (${artwork.year || ""}${artwork.size ? `, ${artwork.size}` : ""
-        }). `;
+      const prefix = `I’m writing about “${artwork.title}” (${
+        artwork.year || ""
+      }${artwork.size ? `, ${artwork.size}` : ""}). `;
       if (!messageField.value.startsWith(prefix)) {
         messageField.value = prefix + "\n\n";
       }
@@ -391,6 +409,29 @@ function closeArtworkModal() {
   modal.setAttribute("aria-hidden", "true");
 }
 
+function openArtworkAtIndex(index) {
+  if (!currentSequence.length) return;
+
+  const count = currentSequence.length;
+  // wrap around
+  if (index < 0) index = count - 1;
+  if (index >= count) index = 0;
+
+  currentModalIndex = index;
+  const slug = currentSequence[currentModalIndex];
+  openArtworkModal(slug);
+}
+
+function openNextArtwork() {
+  if (!currentSequence.length) return;
+  openArtworkAtIndex(currentModalIndex + 1);
+}
+
+function openPrevArtwork() {
+  if (!currentSequence.length) return;
+  openArtworkAtIndex(currentModalIndex - 1);
+}
+
 function setupModal() {
   const modal = document.getElementById("artworkModal");
   if (!modal) return;
@@ -400,9 +441,34 @@ function setupModal() {
     el.addEventListener("click", () => closeArtworkModal());
   });
 
+  const prevBtn = document.getElementById("modalPrev");
+  const nextBtn = document.getElementById("modalNext");
+
+  if (prevBtn) {
+    prevBtn.addEventListener("click", () => {
+      openPrevArtwork();
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener("click", () => {
+      openNextArtwork();
+    });
+  }
+
   document.addEventListener("keydown", (e) => {
+    // Only respond to keys when the modal is actually open
+    if (!modal.classList.contains("is-open")) return;
+
     if (e.key === "Escape") {
+      e.preventDefault();
       closeArtworkModal();
+    } else if (e.key === "ArrowRight") {
+      e.preventDefault();
+      openNextArtwork();
+    } else if (e.key === "ArrowLeft") {
+      e.preventDefault();
+      openPrevArtwork();
     }
   });
 }
