@@ -87,27 +87,6 @@
       "description": ""
     },
     {
-      "slug": "tree",
-      "title": "Tree",
-      "year": 2025,
-      "size": "9 × 12 in",
-      "medium": "gouache on yupo paper",
-      "status": "available",
-      "price": "Inquire",
-      "image": "images/tree.jpg",
-      "tags": [
-        "Figure"
-      ],
-      "printsAvailable": true,
-      "printPrices": {
-        "Small": 40,
-        "Medium": 70,
-        "Large": 120
-      },
-      "description": "",
-      "featured": false
-    },
-    {
       "slug": "cat-and-machine",
       "title": "Cat and machine",
       "year": 2025,
@@ -128,6 +107,50 @@
       },
       "description": "",
       "featured": true
+    },
+    {
+      "slug": "heaven",
+      "title": "Heaven",
+      "year": 2025,
+      "size": "18 × 24 in",
+      "medium": "Oil on linen",
+      "status": "available",
+      "price": "800",
+      "image": "images/heaven.jpg",
+      "tags": [
+        "Animal",
+        "Landscape",
+        "Surreal"
+      ],
+      "printsAvailable": true,
+      "printPrices": {
+        "Small": 40,
+        "Medium": 70,
+        "Large": 120
+      },
+      "description": "",
+      "featured": true
+    },
+    {
+      "slug": "tree",
+      "title": "Tree",
+      "year": 2025,
+      "size": "9 × 12 in",
+      "medium": "gouache on yupo paper",
+      "status": "available",
+      "price": "Inquire",
+      "image": "images/tree.jpg",
+      "tags": [
+        "Figure"
+      ],
+      "printsAvailable": true,
+      "printPrices": {
+        "Small": 40,
+        "Medium": 70,
+        "Large": 120
+      },
+      "description": "",
+      "featured": false
     },
     {
       "slug": "hiding-in-the-bushes",
