@@ -12,7 +12,8 @@
       "tags": [
         "Figure"
       ],
-      "description": ""
+      "description": "",
+      "featured": true
     },
     {
       "slug": "head-i",
@@ -89,7 +90,8 @@
         "Surreal",
         "Animal"
       ],
-      "description": ""
+      "description": "",
+      "featured": true
     },
     {
       "slug": "hiding-in-the-bushes",
