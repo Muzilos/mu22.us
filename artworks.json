@@ -1,13 +1,27 @@
 {
   "artworks": [
     {
+      "slug": "on-the-subway-train",
+      "title": "On the subway train",
+      "year": 2025,
+      "size": "24 × 36 in",
+      "medium": "Oil on linen",
+      "status": "available",
+      "price": "Inquire",
+      "image": "images/on-the-subway-train.jpg",
+      "tags": [
+        "Figure"
+      ],
+      "description": ""
+    },
+    {
       "slug": "head-i",
       "title": "Head I",
       "year": 2025,
       "size": "36 × 36 in",
       "medium": "Oil on canvas",
       "status": "available",
-      "price": "3600",
+      "price": "Inquire",
       "image": "images/head 1.jpg",
       "tags": [
         "Head",
@@ -23,7 +37,7 @@
       "size": "36 × 36 in",
       "medium": "Oil on canvas",
       "status": "available",
-      "price": "3600",
+      "price": "Inquire",
       "image": "images/beekeeper.jpg",
       "tags": [
         "Head",
@@ -34,19 +48,33 @@
     },
     {
       "slug": "head-iii",
-      "title": "Head III",
+      "title": "Head III (Noodlehead)",
       "year": 2025,
       "size": "36 × 36 in",
       "medium": "Oil on canvas",
       "status": "available",
-      "price": "3600",
+      "price": "Inquire",
       "image": "images/heaad 4.jpg",
       "tags": [
         "Head",
         "Surreal"
       ],
+      "description": ""
+    },
+    {
+      "slug": "tree",
+      "title": "Tree",
+      "year": 2025,
+      "size": "9 × 12 in",
+      "medium": "gouache on yupo paper",
+      "status": "available",
+      "price": "Inquire",
+      "image": "images/tree.jpg",
+      "tags": [
+        "Figure"
+      ],
       "description": "",
-      "featured": true
+      "featured": false
     },
     {
       "slug": "cat-and-machine",
@@ -61,8 +89,7 @@
         "Surreal",
         "Animal"
       ],
-      "description": "",
-      "featured": true
+      "description": ""
     },
     {
       "slug": "hiding-in-the-bushes",
@@ -70,8 +97,8 @@
       "year": 2025,
       "size": "9 × 6 in",
       "medium": "Oil on canvas board",
-      "status": "sold",
-      "price": "200",
+      "status": "available",
+      "price": "250",
       "image": "images/hiding.jpg",
       "tags": [
         "Surreal",
@@ -86,7 +113,7 @@
       "size": "36 × 36 in",
       "medium": "Oil on canvas",
       "status": "available",
-      "price": "3600",
+      "price": "Inquire",
       "image": "images/head 3.jpg",
       "tags": [
         "Head",

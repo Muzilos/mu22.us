@@ -14,19 +14,22 @@ let featuredIntervalId = null;
 
 function statusLabel(status) {
   if (status === "available") return "Available";
-  if (status === "reserved") return "Reserved";
   if (status === "sold") return "Sold";
   return "";
 }
 
 function statusClass(status) {
   if (status === "available") return "available";
-  if (status === "reserved") return "reserved";
   if (status === "sold") return "sold";
   return "";
 }
 
 function priceDisplay(artwork) {
+  if (artwork.status === "sold") {
+    return "";
+  } else if (isNaN(artwork.price)) {
+    return artwork.price;
+  }
   return artwork.price ? `$${artwork.price.toLocaleString()}` : "";
 }
 
@@ -334,8 +337,8 @@ function openArtworkModal(slug) {
   const img = document.getElementById("modalImage");
   const titleEl = document.getElementById("modalTitle");
   const metaEl = document.getElementById("modalMeta");
-  const descEl = document.getElementById("modalDescription");
-  const tagsEl = document.getElementById("modalTags");
+  // const descEl = document.getElementById("modalDescription");
+  // const tagsEl = document.getElementById("modalTags");
   const statusEl = document.getElementById("modalStatus");
   const inquireBtn = document.getElementById("modalInquireButton");
 
@@ -347,10 +350,10 @@ function openArtworkModal(slug) {
   }${artwork.medium ? ` · ${artwork.medium}` : ""}`;
 
   // Description (if present in JSON)
-  descEl.textContent = artwork.description || "";
+  // descEl.textContent = artwork.description || "";
 
   // Clear tags (you can extend this later if you add tags in JSON)
-  tagsEl.innerHTML = "";
+  // tagsEl.innerHTML = "";
 
   // status + price + note
   const priceText = priceDisplay(artwork);

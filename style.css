@@ -29,11 +29,9 @@ body {
   color: var(--text);
   background-color: var(--bg);
   /* Option 4 - subtle dot grid texture */
-  background-image: radial-gradient(
-    circle at 1px 1px,
-    rgba(0, 0, 0, 0.5) 1px,
-    transparent 0
-  );
+  background-image: radial-gradient(circle at 1px 1px,
+      rgba(0, 0, 0, 0.5) 1px,
+      transparent 0);
   background-size: 22px 22px;
   -webkit-font-smoothing: antialiased;
 }
@@ -69,7 +67,8 @@ body::after {
   padding: 24px 18px 40px;
   border-left: 4px solid var(--border);
   border-right: 4px solid var(--border);
-  background: #ffffff; /* keeps content area clean on top of grid */
+  background: #ffffff;
+  /* keeps content area clean on top of grid */
 }
 
 @media (min-width: 900px) {
@@ -97,7 +96,8 @@ a:hover {
   margin-bottom: 32px;
   padding-bottom: 16px;
   border-bottom: 3px solid var(--border);
-  position: relative; /* for Option 3 rule */
+  position: relative;
+  /* for Option 3 rule */
 }
 
 /* Option 3 - thick overhanging header rule */
@@ -433,14 +433,14 @@ a:hover {
 }
 
 .badge.available {
-  background: #ffffff;
-  color: #000000;
+  background: #e6f7ea;
+  /* soft mint */
+  color: #0c361e;
+  /* deep green text */
+  border-color: #102f1d;
+  /* medium green border */
 }
 
-.badge.reserved {
-  background: #000000;
-  color: #ffffff;
-}
 
 .badge.sold {
   background: #000000;
@@ -617,13 +617,15 @@ textarea:focus {
 
 .modal-dialog {
   position: relative;
-  max-width: 1100px;          /* was 960px */
+  max-width: 1100px;
+  /* was 960px */
   margin: 32px auto;
   background: #ffffff;
   border-radius: 0;
   border: 4px solid var(--border);
   box-shadow: none;
-  padding: 12px 12px 14px;    /* slightly tighter so the image feels bigger */
+  padding: 12px 12px 14px;
+  /* slightly tighter so the image feels bigger */
 }
 
 @media (min-width: 960px) {
@@ -640,7 +642,8 @@ textarea:focus {
 
 @media (min-width: 860px) {
   .modal-layout {
-    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); /* more weight on the image */
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+    /* more weight on the image */
   }
 }
 
@@ -652,8 +655,10 @@ textarea:focus {
   display: flex;
   align-items: center;
   justify-content: center;
-  max-height: 80vh;         /* was 70vh – show more of the painting */
-  position: relative;       /* needed for nav buttons */
+  max-height: 80vh;
+  /* was 70vh – show more of the painting */
+  position: relative;
+  /* needed for nav buttons */
 }
 
 .modal-image-wrap img {
@@ -661,7 +666,8 @@ textarea:focus {
   max-height: 100%;
   width: 100%;
   height: auto;
-  object-fit: contain;      /* ensures whole artwork is visible, no cropping */
+  object-fit: contain;
+  /* ensures whole artwork is visible, no cropping */
 }
 
 .modal-body {
@@ -955,6 +961,7 @@ textarea:focus {
   .modal-nav-prev {
     left: 2px;
   }
+
   .modal-nav-next {
     right: 2px;
   }
