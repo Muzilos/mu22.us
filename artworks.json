@@ -48,14 +48,30 @@
       "description": "",
       "featured": true
     },
-        {
+    {
+      "slug": "cat-and-machine",
+      "title": "Cat and machine",
+      "year": 2025,
+      "size": "12 × 24 in",
+      "medium": "Oil on wood panel",
+      "status": "available",
+      "price": "700",
+      "image": "images/cat-and-machine.jpg",
+      "tags": [
+        "Surreal",
+        "Animal"
+      ],
+      "description": "",
+      "featured": true
+    },
+    {
       "slug": "hiding-in-the-bushes",
       "title": "Hiding in the bushes",
       "year": 2025,
       "size": "9 × 6 in",
       "medium": "Oil on canvas board",
       "status": "sold",
-      "price": "",
+      "price": "200",
       "image": "images/hiding.jpg",
       "tags": [
         "Surreal",
