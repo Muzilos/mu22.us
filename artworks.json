@@ -12,6 +12,12 @@
       "tags": [
         "Figure"
       ],
+      "printsAvailable": true,
+      "printPrices": {
+        "Small": 40,
+        "Medium": 70,
+        "Large": 120
+      },
       "description": "",
       "featured": true
     },
@@ -28,6 +34,12 @@
         "Head",
         "Surreal"
       ],
+      "printsAvailable": true,
+      "printPrices": {
+        "Small": 40,
+        "Medium": 70,
+        "Large": 120
+      },
       "description": "",
       "featured": true
     },
@@ -44,6 +56,12 @@
         "Head",
         "Surreal"
       ],
+      "printsAvailable": true,
+      "printPrices": {
+        "Small": 40,
+        "Medium": 70,
+        "Large": 120
+      },
       "description": "",
       "featured": true
     },
@@ -60,6 +78,12 @@
         "Head",
         "Surreal"
       ],
+      "printsAvailable": true,
+      "printPrices": {
+        "Small": 40,
+        "Medium": 70,
+        "Large": 120
+      },
       "description": ""
     },
     {
@@ -74,6 +98,12 @@
       "tags": [
         "Figure"
       ],
+      "printsAvailable": true,
+      "printPrices": {
+        "Small": 40,
+        "Medium": 70,
+        "Large": 120
+      },
       "description": "",
       "featured": false
     },
@@ -90,6 +120,12 @@
         "Surreal",
         "Animal"
       ],
+      "printsAvailable": true,
+      "printPrices": {
+        "Small": 40,
+        "Medium": 70,
+        "Large": 120
+      },
       "description": "",
       "featured": true
     },
@@ -106,6 +142,12 @@
         "Surreal",
         "Figure"
       ],
+      "printsAvailable": true,
+      "printPrices": {
+        "Small": 40,
+        "Medium": 70,
+        "Large": 120
+      },
       "description": ""
     },
     {
@@ -121,6 +163,12 @@
         "Head",
         "Surreal"
       ],
+      "printsAvailable": true,
+      "printPrices": {
+        "Small": 40,
+        "Medium": 70,
+        "Large": 120
+      },
       "description": "",
       "featured": false
     },
@@ -138,6 +186,12 @@
         "Interior",
         "Object"
       ],
+      "printsAvailable": true,
+      "printPrices": {
+        "Small": 40,
+        "Medium": 70,
+        "Large": 120
+      },
       "description": "",
       "featured": true
     },
@@ -153,6 +207,12 @@
       "tags": [
         "Animal"
       ],
+      "printsAvailable": true,
+      "printPrices": {
+        "Small": 40,
+        "Medium": 70,
+        "Large": 120
+      },
       "description": ""
     },
     {
@@ -169,6 +229,12 @@
         "Portrait",
         "Interior"
       ],
+      "printsAvailable": true,
+      "printPrices": {
+        "Small": 40,
+        "Medium": 70,
+        "Large": 120
+      },
       "description": "",
       "featured": true
     },
@@ -186,6 +252,12 @@
         "Portrait",
         "Interior"
       ],
+      "printsAvailable": true,
+      "printPrices": {
+        "Small": 40,
+        "Medium": 70,
+        "Large": 120
+      },
       "description": ""
     },
     {
@@ -202,6 +274,12 @@
         "Surreal",
         "Figure"
       ],
+      "printsAvailable": true,
+      "printPrices": {
+        "Small": 40,
+        "Medium": 70,
+        "Large": 120
+      },
       "description": ""
     },
     {
@@ -218,6 +296,12 @@
         "Surreal",
         "Figure"
       ],
+      "printsAvailable": true,
+      "printPrices": {
+        "Small": 40,
+        "Medium": 70,
+        "Large": 120
+      },
       "description": ""
     }
   ]

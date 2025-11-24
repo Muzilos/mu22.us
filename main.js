@@ -94,9 +94,8 @@ function renderArtworkGrid() {
           <span class="badge ${statusClass(artwork.status)}">
             ${statusLabel(artwork.status)}
           </span>
-          <span class="price ${
-            artwork.status === "sold" ? "price-muted" : ""
-          }">
+          <span class="price ${artwork.status === "sold" ? "price-muted" : ""
+      }">
             ${priceText}
           </span>
         </div>
@@ -341,13 +340,13 @@ function openArtworkModal(slug) {
   // const tagsEl = document.getElementById("modalTags");
   const statusEl = document.getElementById("modalStatus");
   const inquireBtn = document.getElementById("modalInquireButton");
+  const printBtn = document.getElementById("modalPrintButton");
 
   img.src = artwork.image;
   img.alt = artwork.title;
   titleEl.textContent = artwork.title;
-  metaEl.textContent = `${artwork.year || ""}${
-    artwork.size ? ` · ${artwork.size}` : ""
-  }${artwork.medium ? ` · ${artwork.medium}` : ""}`;
+  metaEl.textContent = `${artwork.year || ""}${artwork.size ? ` · ${artwork.size}` : ""
+    }${artwork.medium ? ` · ${artwork.medium}` : ""}`;
 
   // Description (if present in JSON)
   // descEl.textContent = artwork.description || "";
@@ -373,9 +372,8 @@ function openArtworkModal(slug) {
       interestField.value = "acquisition";
     }
     if (messageField) {
-      const prefix = `I’m writing about “${artwork.title}” (${
-        artwork.year || ""
-      }${artwork.size ? `, ${artwork.size}` : ""}). `;
+      const prefix = `I’m writing about “${artwork.title}” (${artwork.year || ""
+        }${artwork.size ? `, ${artwork.size}` : ""}). `;
       if (!messageField.value.startsWith(prefix)) {
         messageField.value = prefix + "\n\n";
       }
@@ -387,6 +385,21 @@ function openArtworkModal(slug) {
       window.scrollTo({ top: y, behavior: "smooth" });
     }
   };
+
+  // --------- PRINT BUTTON IN MODAL ---------
+  if (printBtn) {
+    if (artwork.printsAvailable && typeof openPrintModal === "function") {
+      printBtn.style.display = "block";
+      printBtn.onclick = () => {
+        // this "artwork" is from the openArtworkModal scope
+        openPrintModal(artwork);
+      };
+    } else {
+      // hide / disable if no prints
+      printBtn.style.display = "none";
+      printBtn.onclick = null;
+    }
+  }
 
   modal.classList.add("is-open");
   modal.setAttribute("aria-hidden", "false");
@@ -462,6 +475,129 @@ function setupModal() {
     }
   });
 }
+
+// ============================
+// PRINT PURCHASE LOGIC
+// ============================
+
+let printModal = document.getElementById("print-modal");
+let printTitleElem = document.getElementById("print-title");
+let printOptionsElem = document.getElementById("print-options");
+let printPurchaseBtn = document.getElementById("print-purchase-btn");
+
+let selectedPrint = null;
+
+function openPrintModal(artwork) {
+  printTitleElem.textContent = `Buy Print — ${artwork.title}`;
+  selectedPrint = artwork;
+
+  // render size options
+  printOptionsElem.innerHTML = "";
+  for (let size in artwork.printPrices) {
+    let price = artwork.printPrices[size];
+    let option = document.createElement("div");
+    option.className = "print-option";
+    option.innerHTML = `
+            <label>
+                <input type="radio" name="print-size" value="${size}">
+                ${size} — $${price}
+            </label>
+        `;
+    printOptionsElem.appendChild(option);
+  }
+
+  printModal.classList.remove("hidden");
+}
+
+document.getElementById("print-close").onclick = () => {
+  printModal.classList.add("hidden");
+};
+
+// Purchase button
+printPurchaseBtn.onclick = () => {
+  const sizeInput = document.querySelector('input[name="print-size"]:checked');
+  if (!sizeInput) {
+    alert("Please select a print size.");
+    return;
+  }
+
+  const chosenSize = sizeInput.value;
+  const price =
+    selectedPrint && selectedPrint.printPrices
+      ? selectedPrint.printPrices[chosenSize]
+      : null;
+
+  // Grab the existing Netlify form + fields
+  const form = document.getElementById("contactForm");
+  const nameField = document.getElementById("name");
+  const emailField = document.getElementById("email");
+  const interestField = document.getElementById("interest");
+  const messageField = document.getElementById("message");
+  const contactSection = document.getElementById("contact");
+
+  if (!form || !interestField || !messageField) {
+    console.warn("Contact form or fields not found.");
+    return;
+  }
+
+  // Set interest to "Prints / editions"
+  interestField.value = "print";
+
+  // Pre-fill message with a clear print request
+  const prefix = `I’d like to purchase a ${chosenSize} print of “${selectedPrint.title}”` +
+    (price ? ` for $${price}.` : ".");
+
+  // Don’t duplicate the line if user re-opens the modal
+  if (!messageField.value.includes(selectedPrint.title)) {
+    messageField.value = prefix + "\n\n" + (messageField.value || "");
+  }
+
+  // Close the print modal (if you're using .hidden or similar)
+  const printModalEl = document.getElementById("print-modal");
+  if (printModalEl) {
+    printModalEl.classList.add("hidden");
+  }
+  // Close the artwork modal as well
+  closeArtworkModal();
+
+  // If the user already filled name + email, submit directly.
+  // Otherwise, scroll them to the form so they can complete it.
+  const hasName = nameField && nameField.value.trim().length > 0;
+  const hasEmail = emailField && emailField.value.trim().length > 0;
+
+  if (hasName && hasEmail) {
+    form.submit(); // Netlify will handle the POST and thanks page
+  } else {
+    if (contactSection) {
+      const y =
+        contactSection.getBoundingClientRect().top + window.scrollY - 80;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+    if (nameField) {
+      nameField.focus();
+    }
+  }
+};
+
+
+// Attach listeners to print buttons dynamically:
+fetch("artworks.json")
+  .then(res => res.json())
+  .then(artworks => {
+    artworks.forEach(art => {
+      const btn = document.querySelector(
+        `.print-btn[data-title="${art.title}"]`
+      );
+
+      if (!btn) return;
+
+      if (art.printsAvailable) {
+        btn.addEventListener("click", () => openPrintModal(art));
+      } else {
+        btn.style.display = "none";
+      }
+    });
+  });
 
 // --------- Footer year ---------
 

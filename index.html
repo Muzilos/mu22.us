@@ -103,7 +103,8 @@
                             practice.
                         </p>
                         <p class="info-card-text">
-                            We start with a short call or email exchange about scale, mood, and price. You will see a rough plan up front. Progress photos available if requested.
+                            We start with a short call or email exchange about scale, mood, and price. You will see a
+                            rough plan up front. Progress photos available if requested.
                         </p>
                         <button class="btn" data-scroll-target="contact">
                             Start a commission inquiry
@@ -281,6 +282,9 @@
                         <button class="btn btn-full" id="modalInquireButton" type="button">
                             Inquire about this work
                         </button>
+                        <button class="btn btn-full" id="modalPrintButton" type="button">
+                            Buy a print
+                        </button>
                     </div>
                     <p class="modal-note">
                         The inquiry form will open with this work’s title pre-filled.
@@ -289,6 +293,22 @@
             </div>
         </div>
     </div>
+    
+    <!-- PRINT PURCHASE MODAL -->
+    <div id="print-modal" class="modal hidden">
+        <div class="modal-content">
+            <span id="print-close" class="close">&times;</span>
+            <h2 id="print-title"></h2>
+            <p>Select print size:</p>
+
+            <div id="print-options"></div>
+
+            <button id="print-purchase-btn" class="purchase-btn">
+                Purchase Print
+            </button>
+        </div>
+    </div>
+
 
     <script src="main.js" defer></script>
 </body>
