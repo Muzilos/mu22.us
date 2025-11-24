@@ -27,15 +27,7 @@ function statusClass(status) {
 }
 
 function priceDisplay(artwork) {
-  // artwork.price_display: "number" | "request" | etc.
-  if (artwork.status === "sold" && !artwork.price_display) return "";
-  if (artwork.price_display === "request") return "Request price";
-
-  if (artwork.price_display === "number" && typeof artwork.price === "number") {
-    return `$${artwork.price.toLocaleString()}`;
-  }
-
-  return "";
+  return artwork.price ? `$${artwork.price.toLocaleString()}` : "";
 }
 
 // --------- Load artworks from JSON ---------
@@ -220,7 +212,6 @@ function goToFeaturedSlide(index) {
   const descEl = document.getElementById("featuredDescription");
   const badgeEl = document.getElementById("featuredBadge");
   const priceEl = document.getElementById("featuredPrice");
-  const priceNoteEl = document.getElementById("featuredPriceNote");
   const indexEl = document.getElementById("featuredIndex");
 
   if (titleEl) {
@@ -247,10 +238,6 @@ function goToFeaturedSlide(index) {
   if (priceEl) {
     priceEl.className = "price";
     priceEl.textContent = priceDisplay(art);
-  }
-
-  if (priceNoteEl) {
-    priceNoteEl.textContent = art.priceNote || "";
   }
 
   if (indexEl) {

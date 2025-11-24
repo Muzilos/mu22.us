@@ -1,30 +1,98 @@
 {
   "artworks": [
     {
+      "slug": "head-i",
+      "title": "Head I",
+      "year": 2025,
+      "size": "36 × 36 in",
+      "medium": "Oil on canvas",
+      "status": "available",
+      "price": "3600",
+      "image": "images/head 1.jpg",
+      "tags": [
+        "Head",
+        "Surreal"
+      ],
+      "description": "",
+      "featured": true
+    },
+    {
+      "slug": "head-ii-beekeeper",
+      "title": "Head II (Beekeeper)",
+      "year": 2025,
+      "size": "36 × 36 in",
+      "medium": "Oil on canvas",
+      "status": "available",
+      "price": "3600",
+      "image": "images/beekeeper.jpg",
+      "tags": [
+        "Head",
+        "Surreal"
+      ],
+      "description": "",
+      "featured": true
+    },
+    {
+      "slug": "head-iii",
+      "title": "Head III",
+      "year": 2025,
+      "size": "36 × 36 in",
+      "medium": "Oil on canvas",
+      "status": "available",
+      "price": "3600",
+      "image": "images/heaad 4.jpg",
+      "tags": [
+        "Head",
+        "Surreal"
+      ],
+      "description": "",
+      "featured": true
+    },
+        {
+      "slug": "hiding-in-the-bushes",
+      "title": "Hiding in the bushes",
+      "year": 2025,
+      "size": "9 × 6 in",
+      "medium": "Oil on canvas board",
+      "status": "sold",
+      "price": "",
+      "image": "images/hiding.jpg",
+      "tags": [
+        "Surreal",
+        "Figure"
+      ],
+      "description": ""
+    },
+    {
+      "slug": "head-iv",
+      "title": "Head III",
+      "year": 2025,
+      "size": "36 × 36 in",
+      "medium": "Oil on canvas",
+      "status": "available",
+      "price": "3600",
+      "image": "images/head 3.jpg",
+      "tags": [
+        "Head",
+        "Surreal"
+      ],
+      "description": "",
+      "featured": false
+    },
+    {
       "slug": "Jacket",
       "title": "Jacket",
       "year": 2024,
       "size": "18 × 24 in",
       "medium": "Oil on canvas",
       "status": "available",
-      "price": "$800",
-      "priceNote": "",
+      "price": "750",
       "image": "images/09-30-2024 13.34.jpg",
-      "tags": ["Figure", "Interior", "Object"],
-      "description": "",
-      "featured": true
-    },
-    {
-      "slug": "crops-i",
-      "title": "Crops I",
-      "year": 2025,
-      "size": "24 × 36 in",
-      "medium": "Oil on canvas",
-      "status": "available",
-      "price": "$900",
-      "priceNote": "",
-      "image": "images/Crops I.png",
-      "tags": ["Figure", "Interior", "Noctune"],
+      "tags": [
+        "Figure",
+        "Interior",
+        "Object"
+      ],
       "description": "",
       "featured": true
     },
@@ -36,22 +104,26 @@
       "medium": "Oil on canvas",
       "status": "sold",
       "price": "",
-      "priceNote": "In a private collection",
       "image": "images/IMG_20191111_034703_152.jpg",
-      "tags": ["Animal"],
+      "tags": [
+        "Animal"
+      ],
       "description": ""
     },
     {
-      "slug": "looking-away",
-      "title": "Looking away",
+      "slug": "pain",
+      "title": "Pain",
       "year": 2024,
       "size": "30 × 24 in",
       "medium": "Oil on canvas",
       "status": "available",
-      "price": "$800",
-      "priceNote": "",
+      "price": "350",
       "image": "images/IMG_20240408_164102_836.png",
-      "tags": ["Figure", "Portrait", "Interior"],
+      "tags": [
+        "Figure",
+        "Portrait",
+        "Interior"
+      ],
       "description": "",
       "featured": true
     },
@@ -62,10 +134,13 @@
       "size": "18 × 24 in",
       "medium": "Oil on canvas",
       "status": "available",
-      "price": "$800",
-      "priceNote": "",
+      "price": "250",
       "image": "images/IMG_20240422_175529_875.png",
-      "tags": ["Figure", "Portrait", "Interior"],
+      "tags": [
+        "Figure",
+        "Portrait",
+        "Interior"
+      ],
       "description": ""
     },
     {
@@ -76,9 +151,28 @@
       "medium": "Oil on canvas",
       "status": "sold",
       "price": "",
-      "priceNote": "In a private collection",
       "image": "images/IMG_20210424_130913_187.jpg",
-      "tags": ["Head", "Surreal", "Figure"],
+      "tags": [
+        "Head",
+        "Surreal",
+        "Figure"
+      ],
+      "description": ""
+    },
+    {
+      "slug": "our-deal-leader",
+      "title": "Our Deal Leader",
+      "year": 2021,
+      "size": "11 × 8½ in",
+      "medium": "Oil on canvas",
+      "status": "available",
+      "price": "275",
+      "image": "images/doc02433320251113181942_0006.jpg",
+      "tags": [
+        "Head",
+        "Surreal",
+        "Figure"
+      ],
       "description": ""
     }
   ]
