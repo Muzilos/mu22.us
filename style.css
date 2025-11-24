@@ -128,10 +128,10 @@ a:hover {
 
 .brand-title {
   font-family: "Georgia", "Times New Roman", serif;
-  font-size: 2rem;
+  font-size: 2.5rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  word-wrap: break-word;
+  word-wrap: normal;
 }
 
 .brand-subtitle {
