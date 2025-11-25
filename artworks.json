@@ -1,8 +1,8 @@
 {
   "artworks": [
     {
-      "slug": "on-the-subway-train",
-      "title": "On the subway train",
+      "slug": "its-getting-cold",
+      "title": "It's getting cold",
       "year": 2025,
       "size": "24 × 36 in",
       "medium": "Oil on linen",
@@ -90,7 +90,7 @@
       "slug": "cat-and-machine",
       "title": "Cat and machine",
       "year": 2025,
-      "size": "12 × 24 in",
+      "size": "12½ × 23½ in",
       "medium": "Oil on wood panel",
       "status": "available",
       "price": "700",
@@ -156,7 +156,7 @@
       "slug": "hiding-in-the-bushes",
       "title": "Hiding in the bushes",
       "year": 2025,
-      "size": "9 × 6 in",
+      "size": "12 × 9 in",
       "medium": "Oil on canvas board",
       "status": "available",
       "price": "250",
@@ -242,7 +242,7 @@
       "slug": "pain",
       "title": "Pain",
       "year": 2024,
-      "size": "14 × 9 in",
+      "size": "16 × 12 in",
       "medium": "Oil on canvas",
       "status": "available",
       "price": "350",
