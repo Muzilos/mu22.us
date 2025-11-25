@@ -607,6 +607,121 @@ function setCurrentYear() {
   yearEl.textContent = new Date().getFullYear();
 }
 
+// ---- Generic swipe helper ----
+function setupSwipe(element, onSwipeLeft, onSwipeRight) {
+  const SWIPE_THRESHOLD = 50; // pixels
+  let startX = 0;
+  let startY = 0;
+  let lastX = 0;
+  let lastY = 0;
+  let isDragging = false;
+  let isTouch = false;
+
+  function startDrag(x, y, touch) {
+    isDragging = true;
+    isTouch = touch;
+    startX = lastX = x;
+    startY = lastY = y;
+  }
+
+  function moveDrag(x, y) {
+    if (!isDragging) return;
+    lastX = x;
+    lastY = y;
+  }
+
+  function endDrag() {
+    if (!isDragging) return;
+    isDragging = false;
+
+    const dx = lastX - startX;
+    const dy = lastY - startY;
+
+    // Only treat mostly-horizontal gestures as swipes
+    if (Math.abs(dx) < SWIPE_THRESHOLD || Math.abs(dx) < Math.abs(dy)) {
+      return; // ignore small or vertical drags
+    }
+
+    if (dx < 0) {
+      // dragged left → next item
+      onSwipeLeft && onSwipeLeft();
+    } else {
+      // dragged right → previous item
+      onSwipeRight && onSwipeRight();
+    }
+  }
+
+  // Touch events
+  element.addEventListener(
+    "touchstart",
+    (e) => {
+      const t = e.touches[0];
+      if (!t) return;
+      startDrag(t.clientX, t.clientY, true);
+    },
+    { passive: true }
+  );
+
+  element.addEventListener(
+    "touchmove",
+    (e) => {
+      if (!isDragging || !isTouch) return;
+      const t = e.touches[0];
+      if (!t) return;
+      moveDrag(t.clientX, t.clientY);
+    },
+    { passive: true }
+  );
+
+  element.addEventListener("touchend", () => {
+    if (isTouch) endDrag();
+  });
+
+  // Mouse events (for desktop "swipe" via click-and-drag)
+  element.addEventListener("mousedown", (e) => {
+    if (e.button !== 0) return; // left click only
+    startDrag(e.clientX, e.clientY, false);
+  });
+
+  window.addEventListener("mousemove", (e) => {
+    if (!isDragging || isTouch) return;
+    moveDrag(e.clientX, e.clientY);
+  });
+
+  window.addEventListener("mouseup", () => {
+    if (!isTouch) endDrag();
+  });
+}
+
+// ---- Wire swipe to your existing arrows ----
+document.addEventListener("DOMContentLoaded", () => {
+  const featuredMedia = document.getElementById("featuredMedia");
+  const featuredPrev = document.getElementById("featuredPrev");
+  const featuredNext = document.getElementById("featuredNext");
+
+  const modalImage = document.getElementById("modalImage");
+  const modalPrev = document.getElementById("modalPrev");
+  const modalNext = document.getElementById("modalNext");
+
+  if (featuredMedia && featuredPrev && featuredNext) {
+    // Swipe left/right on the featured image area
+    setupSwipe(
+      featuredMedia,
+      () => featuredNext.click(), // swipe left → next featured work
+      () => featuredPrev.click()  // swipe right → previous featured work
+    );
+  }
+
+  if (modalImage && modalPrev && modalNext) {
+    // Swipe left/right on the big modal image
+    setupSwipe(
+      modalImage,
+      () => modalNext.click(), // swipe left → next work in modal
+      () => modalPrev.click()  // swipe right → previous work in modal
+    );
+  }
+});
+
 // --------- Init ---------
 
 document.addEventListener("DOMContentLoaded", () => {
