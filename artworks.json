@@ -1,6 +1,29 @@
 {
   "artworks": [
     {
+      "slug": "head 4",
+      "title": "Head 4",
+      "year": 2025,
+      "size": "36 × 36 in",
+      "medium": "Oil on linen",
+      "status": "available",
+      "price": "Inquire",
+      "image": "images/heaad 4.jpg",
+      "tags": [
+        "Figure",
+        "Head",
+        "Surreal"
+      ],
+      "printsAvailable": true,
+      "printPrices": {
+        "Small": 40,
+        "Medium": 70,
+        "Large": 120
+      },
+      "description": "",
+      "featured": true
+    },
+    {
       "slug": "its-getting-cold",
       "title": "It's getting cold",
       "year": 2025,
