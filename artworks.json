@@ -19,7 +19,8 @@
         "Medium": 70,
         "Large": 120
       },
-      "description": ""
+      "description": "",
+      "featured": true
     },
 {
       "slug": "its-getting-cold",
