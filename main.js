@@ -15,12 +15,14 @@ let featuredIntervalId = null;
 function statusLabel(status) {
   if (status === "available") return "Available";
   if (status === "sold") return "Sold";
+  if (status === "reserved") return "Reserved";
   return "";
 }
 
 function statusClass(status) {
   if (status === "available") return "available";
   if (status === "sold") return "sold";
+  if (status === "reserved") return "reserved";
   return "";
 }
 

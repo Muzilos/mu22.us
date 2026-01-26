@@ -35,6 +35,7 @@ collections:
                 options:
                   - { label: "Available", value: "available" }
                   - { label: "Sold / Placed", value: "sold" }
+                  - { label: "Reserved", value: "reserved" }
               - label: "Price Display"
                 name: "price_display"
                 widget: "select"
