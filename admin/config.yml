@@ -1,14 +1,14 @@
 backend:
   name: git-gateway
-  branch: main   # or 'master' if that’s your default branch
+  branch: main
 
-media_folder: "paintings"   # where uploaded images go in the repo
-public_folder: "/paintings" # how they’re referenced in the site
+media_folder: "images"
+public_folder: "images"
 
-local_backend: true
+# Uncomment the line below for local development (bypasses auth)
+# local_backend: true
 
 collections:
-  # Single JSON file containing all artworks
   - label: "Artworks"
     name: "artworks"
     files:
@@ -43,6 +43,23 @@ collections:
                   - { label: "Show number", value: "number" }
                   - { label: "Request price", value: "request" }
                   - { label: "Note only (no price)", value: "note-only" }
-              - { label: "Price (USD)", name: "price", widget: "number", required: false }
-              - { label: "Note (e.g. 'Private collection')", name: "note", widget: "string", required: false }
+              - { label: "Price (USD)", name: "price", widget: "string", required: false, hint: "Number, ‘Inquire’, or custom text" }
+              - { label: "Note (e.g. ‘Private collection’)", name: "note", widget: "string", required: false }
               - { label: "Image", name: "image", widget: "image" }
+              - label: "Tags"
+                name: "tags"
+                widget: "list"
+                required: false
+                field: { label: "Tag", name: "tag", widget: "string" }
+              - { label: "Prints Available", name: "printsAvailable", widget: "boolean", default: true, required: false }
+              - label: "Print Prices"
+                name: "printPrices"
+                widget: "object"
+                required: false
+                collapsed: true
+                fields:
+                  - { label: "Small", name: "Small", widget: "number", default: 40, required: false }
+                  - { label: "Medium", name: "Medium", widget: "number", default: 70, required: false }
+                  - { label: "Large", name: "Large", widget: "number", default: 120, required: false }
+              - { label: "Description", name: "description", widget: "text", required: false }
+              - { label: "Featured", name: "featured", widget: "boolean", default: false, required: false }
