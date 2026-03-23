@@ -8,6 +8,7 @@
     <meta name="description"
         content="Figurative interiors, nocturnes, and bodies dissolving into space by New York–based painter Muzzammil Mehdi." />
     <link rel="stylesheet" href="style.css" />
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 
 <body>
@@ -312,6 +313,17 @@
 
 
     <script src="main.js" defer></script>
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", function(user) {
+          if (!user) {
+            window.netlifyIdentity.on("login", function() {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
 </body>
 
 </html>
