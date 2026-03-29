@@ -1,16 +1,16 @@
 {
   "artworks": [
-        {
-      "slug": "head-iii",
-      "title": "Head III (Noodlehead)",
-      "year": 2025,
-      "size": "36 × 36 in",
-      "medium": "Oil on canvas",
-      "status": "reserved",
-      "price": "Showing 2/5 at Medium Rare Project Space",
-      "image": "images/heaad 4.jpg",
+    {
+      "slug": "city-street",
+      "title": "City Street",
+      "year": 2026,
+      "size": "36 × 46 in",
+      "medium": "Mixed media",
+      "status": "available",
+      "price": "2300",
+      "image": "images/20260305_162203.jpg",
       "tags": [
-        "Head",
+        "Landscape",
         "Surreal"
       ],
       "printsAvailable": true,
@@ -22,16 +22,148 @@
       "description": "",
       "featured": true
     },
-{
+    {
+      "slug": "candle",
+      "title": "Candle",
+      "year": 2025,
+      "size": "12 × 12 in",
+      "medium": "Mixed media",
+      "status": "available",
+      "price": "750",
+      "image": "images/Candle_2025_12 x 12in_Mixed Media-EDIT.jpg",
+      "tags": [
+        "Object",
+        "Surreal"
+      ],
+      "printsAvailable": true,
+      "printPrices": {
+        "Small": 40,
+        "Medium": 70,
+        "Large": 120
+      },
+      "description": "",
+      "featured": true
+    },
+    {
+      "slug": "cat-and-machine",
+      "title": "Cat and machine",
+      "year": 2025,
+      "size": "12½ × 23½ in",
+      "medium": "Oil on wood panel",
+      "status": "available",
+      "price": "450",
+      "image": "images/Cat and machine_2025_12.5 x 23.5in_oil on wood panel.jpg",
+      "tags": [
+        "Surreal",
+        "Animal"
+      ],
+      "printsAvailable": true,
+      "printPrices": {
+        "Small": 40,
+        "Medium": 70,
+        "Large": 120
+      },
+      "description": "",
+      "featured": true
+    },
+    {
+      "slug": "vacuuming",
+      "title": "Vacuuming",
+      "year": 2025,
+      "size": "36 × 24 in",
+      "medium": "Oil on linen",
+      "status": "available",
+      "price": "1450",
+      "image": "images/20260305_162218-EDIT.jpg",
+      "tags": [
+        "Figure"
+        "Surreal",
+      ],
+      "printsAvailable": true,
+      "printPrices": {
+        "Small": 40,
+        "Medium": 70,
+        "Large": 120
+      },
+      "description": "",
+      "featured": true
+    },
+    {
       "slug": "its-getting-cold",
       "title": "It's getting cold",
       "year": 2025,
       "size": "24 × 36 in",
       "medium": "Oil on linen",
       "status": "available",
-      "price": "Inquire",
+      "price": "1350",
       "image": "images/on-the-subway-train.jpg",
       "tags": [
+        "Figure"
+      ],
+      "printsAvailable": true,
+      "printPrices": {
+        "Small": 40,
+        "Medium": 70,
+        "Large": 120
+      },
+      "description": "",
+      "featured": false
+    },
+    {
+      "slug": "heaven",
+      "title": "Heaven",
+      "year": 2025,
+      "size": "18 × 24 in",
+      "medium": "Oil on linen",
+      "status": "available",
+      "price": "450",
+      "image": "images/heaven.jpg",
+      "tags": [
+        "Animal",
+        "Landscape",
+        "Surreal"
+      ],
+      "printsAvailable": true,
+      "printPrices": {
+        "Small": 40,
+        "Medium": 70,
+        "Large": 120
+      },
+      "description": "",
+      "featured": false
+    },
+    {
+      "slug": "tree",
+      "title": "Two Trees",
+      "year": 2025,
+      "size": "9 × 12 in",
+      "medium": "gouache on yupo paper",
+      "status": "available",
+      "price": "350",
+      "image": "images/tree.jpg",
+      "tags": [
+        "Figure"
+      ],
+      "printsAvailable": true,
+      "printPrices": {
+        "Small": 40,
+        "Medium": 70,
+        "Large": 120
+      },
+      "description": "",
+      "featured": true
+    },
+    {
+      "slug": "runnin",
+      "title": "Runnin'",
+      "year": 2025,
+      "size": "8 × 6 in",
+      "medium": "Oil on canvas board",
+      "status": "available",
+      "price": "350",
+      "image": "images//Runnin_2025_8 x 6in_Oil on canvas board-EDIT.jpg",
+      "tags": [
+        "Surreal",
         "Figure"
       ],
       "printsAvailable": true,
@@ -63,17 +195,17 @@
         "Large": 120
       },
       "description": "",
-      "featured": true
+      "featured": false
     },
     {
-      "slug": "head-ii-beekeeper",
-      "title": "Head II (Beekeeper)",
+      "slug": "head-iii",
+      "title": "Head III (Noodlehead)",
       "year": 2025,
       "size": "36 × 36 in",
       "medium": "Oil on canvas",
-      "status": "reserved",
-      "price": "Showing 2/5 at Medium Rare Project Space",
-      "image": "images/beekeeper.jpg",
+      "status": "available",
+      "price": "Inquire",
+      "image": "images/heaad 4.jpg",
       "tags": [
         "Head",
         "Surreal"
@@ -85,94 +217,7 @@
         "Large": 120
       },
       "description": "",
-      "featured": true
-    },
-    {
-      "slug": "cat-and-machine",
-      "title": "Cat and machine",
-      "year": 2025,
-      "size": "12½ × 23½ in",
-      "medium": "Oil on wood panel",
-      "status": "available",
-      "price": "700",
-      "image": "images/cat-and-machine.jpg",
-      "tags": [
-        "Surreal",
-        "Animal"
-      ],
-      "printsAvailable": true,
-      "printPrices": {
-        "Small": 40,
-        "Medium": 70,
-        "Large": 120
-      },
-      "description": "",
-      "featured": true
-    },
-    {
-      "slug": "heaven",
-      "title": "Heaven",
-      "year": 2025,
-      "size": "18 × 24 in",
-      "medium": "Oil on linen",
-      "status": "available",
-      "price": "800",
-      "image": "images/heaven.jpg",
-      "tags": [
-        "Animal",
-        "Landscape",
-        "Surreal"
-      ],
-      "printsAvailable": true,
-      "printPrices": {
-        "Small": 40,
-        "Medium": 70,
-        "Large": 120
-      },
-      "description": "",
-      "featured": true
-    },
-    {
-      "slug": "tree",
-      "title": "Tree",
-      "year": 2025,
-      "size": "9 × 12 in",
-      "medium": "gouache on yupo paper",
-      "status": "available",
-      "price": "Inquire",
-      "image": "images/tree.jpg",
-      "tags": [
-        "Figure"
-      ],
-      "printsAvailable": true,
-      "printPrices": {
-        "Small": 40,
-        "Medium": 70,
-        "Large": 120
-      },
-      "description": "",
       "featured": false
-    },
-    {
-      "slug": "hiding-in-the-bushes",
-      "title": "Hiding in the bushes",
-      "year": 2025,
-      "size": "12 × 9 in",
-      "medium": "Oil on canvas board",
-      "status": "available",
-      "price": "250",
-      "image": "images/hiding.jpg",
-      "tags": [
-        "Surreal",
-        "Figure"
-      ],
-      "printsAvailable": true,
-      "printPrices": {
-        "Small": 40,
-        "Medium": 70,
-        "Large": 120
-      },
-      "description": ""
     },
     {
       "slug": "head-iv",
@@ -203,7 +248,7 @@
       "size": "18 × 24 in",
       "medium": "Oil on canvas",
       "status": "available",
-      "price": "750",
+      "price": "150",
       "image": "images/09-30-2024 13.34.jpg",
       "tags": [
         "Figure",
@@ -246,7 +291,7 @@
       "size": "16 × 12 in",
       "medium": "Oil on canvas",
       "status": "available",
-      "price": "350",
+      "price": "150",
       "image": "images/IMG_20240408_164102_836.png",
       "tags": [
         "Figure",
@@ -282,7 +327,8 @@
         "Medium": 70,
         "Large": 120
       },
-      "description": ""
+      "description": "",
+      "featured": true
     },
     {
       "slug": "mask-off",
@@ -313,7 +359,7 @@
       "size": "11 × 8½ in",
       "medium": "pencil on thick paper",
       "status": "available",
-      "price": "375",
+      "price": "150",
       "image": "images/doc02433320251113181942_0006.jpg",
       "tags": [
         "Head",
