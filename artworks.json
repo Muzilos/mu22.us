@@ -8,7 +8,7 @@
       "medium": "Mixed media",
       "status": "available",
       "price": "2300",
-      "image": "images/20260305_162203.jpg",
+      "image": "images/20260227_115942-EDIT.jpg",
       "tags": [
         "Landscape",
         "Surreal"
@@ -86,7 +86,7 @@
         "Large": 120
       },
       "description": "",
-      "featured": true
+      "featured": false
     },
     {
       "slug": "its-getting-cold",
