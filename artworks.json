@@ -17,7 +17,8 @@
       ],
       "printsAvailable": false,
       "description": "Small one-of-one New York study from the daily acrylic-on-paper series.",
-      "featured": true
+      "featured": true,
+      "thumbnail": "images/thumbs/brooklyn-bridge-study.jpg"
     },
     {
       "slug": "blue-tower-study",
@@ -36,7 +37,8 @@
       ],
       "printsAvailable": false,
       "description": "Small one-of-one New York study from the daily acrylic-on-paper series.",
-      "featured": true
+      "featured": true,
+      "thumbnail": "images/thumbs/blue-tower-study.jpg"
     },
     {
       "slug": "waterfront-dusk-study",
@@ -55,7 +57,8 @@
       ],
       "printsAvailable": false,
       "description": "Small one-of-one New York study from the daily acrylic-on-paper series.",
-      "featured": true
+      "featured": true,
+      "thumbnail": "images/thumbs/waterfront-dusk-study.jpg"
     },
     {
       "slug": "night-block-study",
@@ -74,7 +77,8 @@
       ],
       "printsAvailable": false,
       "description": "Small one-of-one New York study from the daily acrylic-on-paper series.",
-      "featured": true
+      "featured": true,
+      "thumbnail": "images/thumbs/night-block-study.jpg"
     },
     {
       "slug": "river-trees-study",
@@ -93,7 +97,8 @@
       ],
       "printsAvailable": false,
       "description": "Small one-of-one New York study from the daily acrylic-on-paper series.",
-      "featured": false
+      "featured": false,
+      "thumbnail": "images/thumbs/river-trees-study.jpg"
     },
     {
       "slug": "green-field-study",
@@ -111,7 +116,8 @@
       ],
       "printsAvailable": false,
       "description": "Small one-of-one acrylic-on-paper study.",
-      "featured": false
+      "featured": false,
+      "thumbnail": "images/thumbs/green-field-study.jpg"
     },
     {
       "slug": "city-street",
@@ -133,7 +139,8 @@
         "Large": 120
       },
       "description": "",
-      "featured": true
+      "featured": true,
+      "thumbnail": "images/thumbs/city-street.jpg"
     },
     {
       "slug": "candle",
@@ -155,7 +162,8 @@
         "Large": 120
       },
       "description": "",
-      "featured": true
+      "featured": true,
+      "thumbnail": "images/thumbs/candle.jpg"
     },
     {
       "slug": "cat-and-machine",
@@ -177,7 +185,8 @@
         "Large": 120
       },
       "description": "",
-      "featured": true
+      "featured": true,
+      "thumbnail": "images/thumbs/cat-and-machine.jpg"
     },
     {
       "slug": "vacuuming",
@@ -199,7 +208,8 @@
         "Large": 120
       },
       "description": "",
-      "featured": false
+      "featured": false,
+      "thumbnail": "images/thumbs/vacuuming.jpg"
     },
     {
       "slug": "its-getting-cold",
@@ -220,7 +230,8 @@
         "Large": 120
       },
       "description": "",
-      "featured": false
+      "featured": false,
+      "thumbnail": "images/thumbs/its-getting-cold.jpg"
     },
     {
       "slug": "heaven",
@@ -243,7 +254,8 @@
         "Large": 120
       },
       "description": "",
-      "featured": false
+      "featured": false,
+      "thumbnail": "images/thumbs/heaven.jpg"
     },
     {
       "slug": "tree",
@@ -264,7 +276,8 @@
         "Large": 120
       },
       "description": "",
-      "featured": false
+      "featured": false,
+      "thumbnail": "images/thumbs/tree.jpg"
     },
     {
       "slug": "runnin",
@@ -286,7 +299,8 @@
         "Large": 120
       },
       "description": "",
-      "featured": false
+      "featured": false,
+      "thumbnail": "images/thumbs/runnin.jpg"
     },
     {
       "slug": "head-i",
@@ -308,7 +322,8 @@
         "Large": 120
       },
       "description": "",
-      "featured": false
+      "featured": false,
+      "thumbnail": "images/thumbs/head-i.jpg"
     },
     {
       "slug": "head-iii",
@@ -330,7 +345,8 @@
         "Large": 120
       },
       "description": "",
-      "featured": false
+      "featured": false,
+      "thumbnail": "images/thumbs/head-iii.jpg"
     },
     {
       "slug": "head-iv",
@@ -352,7 +368,8 @@
         "Large": 120
       },
       "description": "",
-      "featured": false
+      "featured": false,
+      "thumbnail": "images/thumbs/head-iv.jpg"
     },
     {
       "slug": "Jacket",
@@ -375,7 +392,8 @@
         "Large": 120
       },
       "description": "",
-      "featured": false
+      "featured": false,
+      "thumbnail": "images/thumbs/Jacket.jpg"
     },
     {
       "slug": "cow",
@@ -395,7 +413,8 @@
         "Medium": 70,
         "Large": 120
       },
-      "description": ""
+      "description": "",
+      "thumbnail": "images/thumbs/cow.jpg"
     },
     {
       "slug": "pain",
@@ -418,7 +437,8 @@
         "Large": 120
       },
       "description": "",
-      "featured": false
+      "featured": false,
+      "thumbnail": "images/thumbs/pain.jpg"
     },
     {
       "slug": "sitting-figure",
@@ -441,7 +461,8 @@
         "Large": 120
       },
       "description": "",
-      "featured": false
+      "featured": false,
+      "thumbnail": "images/thumbs/sitting-figure.jpg"
     },
     {
       "slug": "mask-off",
@@ -463,7 +484,8 @@
         "Medium": 70,
         "Large": 120
       },
-      "description": ""
+      "description": "",
+      "thumbnail": "images/thumbs/mask-off.jpg"
     },
     {
       "slug": "our-deal-leader",
@@ -485,7 +507,8 @@
         "Medium": 70,
         "Large": 120
       },
-      "description": ""
+      "description": "",
+      "thumbnail": "images/thumbs/our-deal-leader.jpg"
     }
   ]
 }

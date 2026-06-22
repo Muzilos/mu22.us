@@ -35,6 +35,10 @@ function priceDisplay(artwork) {
   return artwork.price ? `$${artwork.price.toLocaleString()}` : "";
 }
 
+function previewImage(artwork) {
+  return artwork.thumbnail || artwork.image;
+}
+
 // --------- Load artworks from JSON ---------
 
 async function loadArtworks() {
@@ -83,7 +87,7 @@ function renderArtworkGrid() {
 
     card.innerHTML = `
       <div class="artwork-image-wrap">
-        <img src="${artwork.image}" alt="${artwork.title}" loading="lazy" />
+        <img src="${previewImage(artwork)}" alt="${artwork.title}" loading="lazy" decoding="async" />
       </div>
       <div class="artwork-body">
         <div class="artwork-title-row">
@@ -141,7 +145,7 @@ function setupFeaturedCarousel() {
     const slide = document.createElement("div");
     slide.className = "featured-slide";
     slide.dataset.slug = art.slug;
-    slide.innerHTML = `<img src="${art.image}" alt="${art.title}" />`;
+    slide.innerHTML = `<img src="${previewImage(art)}" alt="${art.title}" decoding="async" />`;
 
     // Clicking the big image opens the modal
     slide.addEventListener("click", () => {
