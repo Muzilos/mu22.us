@@ -46,6 +46,12 @@ collections:
               - { label: "Price (USD)", name: "price", widget: "string", required: false, hint: "Number, ‘Inquire’, or custom text" }
               - { label: "Note (e.g. ‘Private collection’)", name: "note", widget: "string", required: false }
               - { label: "Image", name: "image", widget: "image" }
+              - label: "Collection"
+                name: "collection"
+                widget: "select"
+                required: false
+                options:
+                  - { label: "Small NYC Studies", value: "nyc-studies" }
               - label: "Tags"
                 name: "tags"
                 widget: "list"

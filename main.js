@@ -29,7 +29,7 @@ function statusClass(status) {
 function priceDisplay(artwork) {
   if (artwork.status === "sold") {
     return "";
-  } else if (isNaN(artwork.price)) {
+  } else if (typeof artwork.price === "string") {
     return artwork.price;
   }
   return artwork.price ? `$${artwork.price.toLocaleString()}` : "";
@@ -67,6 +67,7 @@ function renderArtworkGrid() {
 
   const filtered = artworks.filter((artwork) => {
     if (currentFilter === "all") return true;
+    if (artwork.collection === currentFilter) return true;
     return artwork.status === currentFilter;
   });
 
@@ -277,17 +278,34 @@ function stopFeaturedAutoRotate() {
 
 function setupFilters() {
   const chips = document.querySelectorAll(".filter-chip");
+  const filterTriggers = document.querySelectorAll("[data-filter-target]");
+
+  function applyFilter(filter) {
+    if (!filter) return;
+
+    currentFilter = filter;
+
+    chips.forEach((c) => {
+      c.classList.toggle("active", c.dataset.filter === filter);
+    });
+
+    renderArtworkGrid();
+  }
+
   chips.forEach((chip) => {
     chip.addEventListener("click", () => {
-      const filter = chip.dataset.filter;
-      if (!filter) return;
+      applyFilter(chip.dataset.filter);
+    });
+  });
 
-      currentFilter = filter;
+  filterTriggers.forEach((trigger) => {
+    trigger.addEventListener("click", () => {
+      applyFilter(trigger.dataset.filterTarget);
+      const workSection = document.getElementById("work");
+      if (!workSection) return;
 
-      chips.forEach((c) => c.classList.remove("active"));
-      chip.classList.add("active");
-
-      renderArtworkGrid();
+      const y = workSection.getBoundingClientRect().top + window.scrollY - 80;
+      window.scrollTo({ top: y, behavior: "smooth" });
     });
   });
 }
@@ -338,8 +356,8 @@ function openArtworkModal(slug) {
   const img = document.getElementById("modalImage");
   const titleEl = document.getElementById("modalTitle");
   const metaEl = document.getElementById("modalMeta");
-  // const descEl = document.getElementById("modalDescription");
-  // const tagsEl = document.getElementById("modalTags");
+  const descEl = document.getElementById("modalDescription");
+  const tagsEl = document.getElementById("modalTags");
   const statusEl = document.getElementById("modalStatus");
   const inquireBtn = document.getElementById("modalInquireButton");
   const printBtn = document.getElementById("modalPrintButton");
@@ -350,11 +368,23 @@ function openArtworkModal(slug) {
   metaEl.textContent = `${artwork.year || ""}${artwork.size ? ` · ${artwork.size}` : ""
     }${artwork.medium ? ` · ${artwork.medium}` : ""}`;
 
-  // Description (if present in JSON)
-  // descEl.textContent = artwork.description || "";
+  if (descEl) {
+    descEl.textContent = artwork.description || "";
+    descEl.hidden = !artwork.description;
+  }
 
-  // Clear tags (you can extend this later if you add tags in JSON)
-  // tagsEl.innerHTML = "";
+  if (tagsEl) {
+    tagsEl.innerHTML = "";
+    const tags = Array.isArray(artwork.tags) ? artwork.tags : [];
+    tagsEl.hidden = tags.length === 0;
+
+    tags.forEach((tag) => {
+      const tagEl = document.createElement("span");
+      tagEl.className = "modal-tag";
+      tagEl.textContent = tag;
+      tagsEl.appendChild(tagEl);
+    });
+  }
 
   // status + price + note
   const priceText = priceDisplay(artwork);
@@ -585,8 +615,10 @@ printPurchaseBtn.onclick = () => {
 // Attach listeners to print buttons dynamically:
 fetch("artworks.json")
   .then(res => res.json())
-  .then(artworks => {
-    artworks.forEach(art => {
+  .then(data => {
+    const works = Array.isArray(data.artworks) ? data.artworks : [];
+
+    works.forEach(art => {
       const btn = document.querySelector(
         `.print-btn[data-title="${art.title}"]`
       );

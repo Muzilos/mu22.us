@@ -1,6 +1,119 @@
 {
   "artworks": [
     {
+      "slug": "brooklyn-bridge-study",
+      "title": "Brooklyn Bridge Study",
+      "year": 2026,
+      "size": "8 × 5 in",
+      "medium": "Acrylic on paper",
+      "status": "available",
+      "price": "$200",
+      "image": "images/nyc-study-brooklyn-bridge.jpg",
+      "collection": "nyc-studies",
+      "tags": [
+        "NYC Studies",
+        "Landscape",
+        "Night"
+      ],
+      "printsAvailable": false,
+      "description": "Small one-of-one New York study from the daily acrylic-on-paper series.",
+      "featured": true
+    },
+    {
+      "slug": "blue-tower-study",
+      "title": "Blue Tower Study",
+      "year": 2026,
+      "size": "5 × 8 in",
+      "medium": "Acrylic on paper",
+      "status": "available",
+      "price": "$200",
+      "image": "images/nyc-study-blue-tower.jpg",
+      "collection": "nyc-studies",
+      "tags": [
+        "NYC Studies",
+        "Landscape",
+        "Architecture"
+      ],
+      "printsAvailable": false,
+      "description": "Small one-of-one New York study from the daily acrylic-on-paper series.",
+      "featured": true
+    },
+    {
+      "slug": "waterfront-dusk-study",
+      "title": "Waterfront Dusk Study",
+      "year": 2026,
+      "size": "8 × 5 in",
+      "medium": "Acrylic on paper",
+      "status": "available",
+      "price": "$200",
+      "image": "images/nyc-study-waterfront-dusk.jpg",
+      "collection": "nyc-studies",
+      "tags": [
+        "NYC Studies",
+        "Landscape",
+        "Waterfront"
+      ],
+      "printsAvailable": false,
+      "description": "Small one-of-one New York study from the daily acrylic-on-paper series.",
+      "featured": true
+    },
+    {
+      "slug": "night-block-study",
+      "title": "Night Block Study",
+      "year": 2026,
+      "size": "5 × 8 in",
+      "medium": "Acrylic on paper",
+      "status": "available",
+      "price": "$200",
+      "image": "images/nyc-study-night-block.jpg",
+      "collection": "nyc-studies",
+      "tags": [
+        "NYC Studies",
+        "Landscape",
+        "Night"
+      ],
+      "printsAvailable": false,
+      "description": "Small one-of-one New York study from the daily acrylic-on-paper series.",
+      "featured": true
+    },
+    {
+      "slug": "river-trees-study",
+      "title": "River Trees Study",
+      "year": 2026,
+      "size": "5 × 8 in",
+      "medium": "Acrylic on paper",
+      "status": "available",
+      "price": "$200",
+      "image": "images/nyc-study-river-trees.jpg",
+      "collection": "nyc-studies",
+      "tags": [
+        "NYC Studies",
+        "Landscape",
+        "Waterfront"
+      ],
+      "printsAvailable": false,
+      "description": "Small one-of-one New York study from the daily acrylic-on-paper series.",
+      "featured": false
+    },
+    {
+      "slug": "green-field-study",
+      "title": "Green Field Study",
+      "year": 2026,
+      "size": "5 × 8 in",
+      "medium": "Acrylic on paper",
+      "status": "available",
+      "price": "$200",
+      "image": "images/green-field-study.jpg",
+      "collection": "nyc-studies",
+      "tags": [
+        "NYC Studies",
+        "Abstract"
+      ],
+      "printsAvailable": false,
+      "description": "Small one-of-one acrylic-on-paper study.",
+      "featured": false
+    },
+    {
       "slug": "city-street",
       "title": "City Street",
       "year": 2026,
@@ -151,7 +264,7 @@
         "Large": 120
       },
       "description": "",
-      "featured": true
+      "featured": false
     },
     {
       "slug": "runnin",
@@ -173,7 +286,7 @@
         "Large": 120
       },
       "description": "",
-      "featured": true
+      "featured": false
     },
     {
       "slug": "head-i",
@@ -262,7 +375,7 @@
         "Large": 120
       },
       "description": "",
-      "featured": true
+      "featured": false
     },
     {
       "slug": "cow",
@@ -305,7 +418,7 @@
         "Large": 120
       },
       "description": "",
-      "featured": true
+      "featured": false
     },
     {
       "slug": "sitting-figure",
@@ -328,7 +441,7 @@
         "Large": 120
       },
       "description": "",
-      "featured": true
+      "featured": false
     },
     {
       "slug": "mask-off",
