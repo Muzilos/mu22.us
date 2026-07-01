@@ -1,6 +1,6 @@
 // --------- Artwork data will be loaded from artworks.json ---------
 let artworks = [];
-let currentFilter = "all";
+let currentFilter = "selected-originals";
 // For modal navigation (next/prev)
 let currentSequence = [];     // array of slugs in the current view
 let currentModalIndex = -1;   // index into currentSequence

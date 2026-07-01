@@ -52,7 +52,9 @@ collections:
                 widget: "select"
                 required: false
                 options:
+                  - { label: "Selected Originals", value: "selected-originals" }
                   - { label: "Small NYC Studies", value: "nyc-studies" }
+                  - { label: "Archive / Supporting Work", value: "archive" }
               - label: "Tags"
                 name: "tags"
                 widget: "list"

@@ -1,6 +1,26 @@
 {
   "artworks": [
     {
+      "slug": "untitled-46x40-oil",
+      "title": "Insanity",
+      "year": 2026,
+      "size": "46 × 40 in",
+      "medium": "Oil on canvas",
+      "status": "available",
+      "price": "Inquire",
+      "image": "images/untitled-46x40-oil-framed.jpg",
+      "collection": "selected-originals",
+      "tags": [
+        "Selected Originals",
+        "Large Format",
+        "Abstract"
+      ],
+      "printsAvailable": false,
+      "description": "A large-format original oil painting with a luminous, layered surface and strong room presence. Presented here as a one-of-one handmade object for serious collector inquiry.",
+      "featured": true,
+      "thumbnail": "images/thumbs/untitled-46x40-oil-framed.jpg"
+    },
+    {
       "slug": "brooklyn-bridge-study",
       "title": "Brooklyn Bridge Study",
       "year": 2026,
@@ -17,7 +37,7 @@
       ],
       "printsAvailable": false,
       "description": "Small one-of-one New York study from the daily acrylic-on-paper series.",
-      "featured": true,
+      "featured": false,
       "thumbnail": "images/thumbs/brooklyn-bridge-study.jpg"
     },
     {
@@ -37,7 +57,7 @@
       ],
       "printsAvailable": false,
       "description": "Small one-of-one New York study from the daily acrylic-on-paper series.",
-      "featured": true,
+      "featured": false,
       "thumbnail": "images/thumbs/blue-tower-study.jpg"
     },
     {
@@ -57,7 +77,7 @@
       ],
       "printsAvailable": false,
       "description": "Small one-of-one New York study from the daily acrylic-on-paper series.",
-      "featured": true,
+      "featured": false,
       "thumbnail": "images/thumbs/waterfront-dusk-study.jpg"
     },
     {
@@ -77,7 +97,7 @@
       ],
       "printsAvailable": false,
       "description": "Small one-of-one New York study from the daily acrylic-on-paper series.",
-      "featured": true,
+      "featured": false,
       "thumbnail": "images/thumbs/night-block-study.jpg"
     },
     {
@@ -129,6 +149,7 @@
       "price": "$23,120",
       "image": "images/03_City Street_2026_36 x 46in_Mixed media.jpg",
       "tags": [
+        "Selected Originals",
         "Landscape",
         "Surreal"
       ],
@@ -138,9 +159,10 @@
         "Medium": 70,
         "Large": 120
       },
-      "description": "",
+      "description": "A large mixed-media cityscape with architectural scale and a charged, dreamlike atmosphere. One of the strongest statement works in the current inventory.",
       "featured": true,
-      "thumbnail": "images/thumbs/city-street.jpg"
+      "thumbnail": "images/thumbs/city-street.jpg",
+      "collection": "selected-originals"
     },
     {
       "slug": "candle",
@@ -152,6 +174,7 @@
       "price": "$6,700",
       "image": "images/Candle_2025_12 x 12in_Mixed Media-EDIT.jpg",
       "tags": [
+        "Selected Originals",
         "Object",
         "Surreal"
       ],
@@ -161,9 +184,10 @@
         "Medium": 70,
         "Large": 120
       },
-      "description": "",
+      "description": "A compact but high-impact original with a quiet, luminous presence. The surface and composition make it read as a serious handmade object rather than decorative wall filler.",
       "featured": true,
-      "thumbnail": "images/thumbs/candle.jpg"
+      "thumbnail": "images/thumbs/candle.jpg",
+      "collection": "selected-originals"
     },
     {
       "slug": "cat-and-machine",
@@ -175,6 +199,7 @@
       "price": "",
       "image": "images/Cat and machine_2025_12.5 x 23.5in_oil on wood panel.jpg",
       "tags": [
+        "Archive",
         "Surreal",
         "Animal"
       ],
@@ -184,9 +209,10 @@
         "Medium": 70,
         "Large": 120
       },
-      "description": "",
-      "featured": true,
-      "thumbnail": "images/thumbs/cat-and-machine.jpg"
+      "description": "Sold work retained as part of the archive and broader record of the studio.",
+      "featured": false,
+      "thumbnail": "images/thumbs/cat-and-machine.jpg",
+      "collection": "archive"
     },
     {
       "slug": "vacuuming",
@@ -196,8 +222,9 @@
       "medium": "Oil on linen",
       "status": "available",
       "price": "$8,756",
-      "image": "images/20260305_162218-EDIT.jpg",
+      "image": "images/vacuuming-framed-light.jpg",
       "tags": [
+        "Selected Originals",
         "Figure",
         "Surreal"
       ],
@@ -207,9 +234,10 @@
         "Medium": 70,
         "Large": 120
       },
-      "description": "",
-      "featured": false,
-      "thumbnail": "images/thumbs/vacuuming.jpg"
+      "description": "A substantial oil-on-linen figure work with interior tension, scale, and visible handwork. Built for a collector looking for a painting with psychological presence.",
+      "featured": true,
+      "thumbnail": "images/thumbs/vacuuming-framed-light.jpg",
+      "collection": "selected-originals"
     },
     {
       "slug": "its-getting-cold",
@@ -221,6 +249,7 @@
       "price": "$13,500",
       "image": "images/on-the-subway-train.jpg",
       "tags": [
+        "Selected Originals",
         "Figure"
       ],
       "printsAvailable": true,
@@ -229,9 +258,10 @@
         "Medium": 70,
         "Large": 120
       },
-      "description": "",
-      "featured": false,
-      "thumbnail": "images/thumbs/its-getting-cold.jpg"
+      "description": "A large oil-on-linen painting with an atmospheric, cinematic quality. The work has the scale and mood to anchor a room.",
+      "featured": true,
+      "thumbnail": "images/thumbs/its-getting-cold.jpg",
+      "collection": "selected-originals"
     },
     {
       "slug": "heaven",
@@ -243,6 +273,7 @@
       "price": "$4,500",
       "image": "images/heaven.jpg",
       "tags": [
+        "Archive",
         "Animal",
         "Landscape",
         "Surreal"
@@ -253,9 +284,10 @@
         "Medium": 70,
         "Large": 120
       },
-      "description": "",
+      "description": "Supporting work retained in the archive while the main presentation leads with selected originals.",
       "featured": false,
-      "thumbnail": "images/thumbs/heaven.jpg"
+      "thumbnail": "images/thumbs/heaven.jpg",
+      "collection": "archive"
     },
     {
       "slug": "tree",
@@ -267,6 +299,7 @@
       "price": "$13,500",
       "image": "images/tree.jpg",
       "tags": [
+        "Selected Originals",
         "Figure"
       ],
       "printsAvailable": true,
@@ -275,9 +308,10 @@
         "Medium": 70,
         "Large": 120
       },
-      "description": "",
-      "featured": false,
-      "thumbnail": "images/thumbs/tree.jpg"
+      "description": "A refined original on yupo paper with an unusually strong image and object quality for its scale. Selected for the premium group because it feels complete, strange, and memorable.",
+      "featured": true,
+      "thumbnail": "images/thumbs/tree.jpg",
+      "collection": "selected-originals"
     },
     {
       "slug": "runnin",
@@ -289,6 +323,7 @@
       "price": "$2,400",
       "image": "images//Runnin_2025_8 x 6in_Oil on canvas board-EDIT.jpg",
       "tags": [
+        "Selected Originals",
         "Surreal",
         "Figure"
       ],
@@ -298,9 +333,10 @@
         "Medium": 70,
         "Large": 120
       },
-      "description": "",
-      "featured": false,
-      "thumbnail": "images/thumbs/runnin.jpg"
+      "description": "A small oil work with concentrated energy and a finished, collectible presence. Included as a compact premium original rather than a study.",
+      "featured": true,
+      "thumbnail": "images/thumbs/runnin.jpg",
+      "collection": "selected-originals"
     },
     {
       "slug": "head-i",
@@ -312,6 +348,7 @@
       "price": "$2,700",
       "image": "images/head 1.jpg",
       "tags": [
+        "Archive",
         "Head",
         "Surreal"
       ],
@@ -321,9 +358,10 @@
         "Medium": 70,
         "Large": 120
       },
-      "description": "",
+      "description": "Archive/supporting work retained for context, not part of the selected premium front room.",
       "featured": false,
-      "thumbnail": "images/thumbs/head-i.jpg"
+      "thumbnail": "images/thumbs/head-i.jpg",
+      "collection": "archive"
     },
     {
       "slug": "head-iii",
@@ -335,6 +373,7 @@
       "price": "$2,700",
       "image": "images/heaad 4.jpg",
       "tags": [
+        "Archive",
         "Head",
         "Surreal"
       ],
@@ -344,9 +383,10 @@
         "Medium": 70,
         "Large": 120
       },
-      "description": "",
+      "description": "Archive/supporting work retained for context, not part of the selected premium front room.",
       "featured": false,
-      "thumbnail": "images/thumbs/head-iii.jpg"
+      "thumbnail": "images/thumbs/head-iii.jpg",
+      "collection": "archive"
     },
     {
       "slug": "head-iv",
@@ -358,6 +398,7 @@
       "price": "$2,700",
       "image": "images/head 3.jpg",
       "tags": [
+        "Archive",
         "Head",
         "Surreal"
       ],
@@ -367,9 +408,10 @@
         "Medium": 70,
         "Large": 120
       },
-      "description": "",
+      "description": "Archive/supporting work retained for context, not part of the selected premium front room.",
       "featured": false,
-      "thumbnail": "images/thumbs/head-iv.jpg"
+      "thumbnail": "images/thumbs/head-iv.jpg",
+      "collection": "archive"
     },
     {
       "slug": "Jacket",
@@ -381,6 +423,7 @@
       "price": "$1,500",
       "image": "images/09-30-2024 13.34.jpg",
       "tags": [
+        "Archive",
         "Figure",
         "Interior",
         "Object"
@@ -391,9 +434,10 @@
         "Medium": 70,
         "Large": 120
       },
-      "description": "",
+      "description": "Supporting work retained in the archive while the main presentation leads with selected originals.",
       "featured": false,
-      "thumbnail": "images/thumbs/Jacket.jpg"
+      "thumbnail": "images/thumbs/Jacket.jpg",
+      "collection": "archive"
     },
     {
       "slug": "cow",
@@ -405,6 +449,7 @@
       "price": "",
       "image": "images/IMG_20191111_034703_152.jpg",
       "tags": [
+        "Archive",
         "Animal"
       ],
       "printsAvailable": true,
@@ -413,8 +458,9 @@
         "Medium": 70,
         "Large": 120
       },
-      "description": "",
-      "thumbnail": "images/thumbs/cow.jpg"
+      "description": "Sold earlier work retained as archive context.",
+      "thumbnail": "images/thumbs/cow.jpg",
+      "collection": "archive"
     },
     {
       "slug": "pain",
@@ -426,6 +472,7 @@
       "price": "$1,500",
       "image": "images/IMG_20240408_164102_836.png",
       "tags": [
+        "Archive",
         "Figure",
         "Portrait",
         "Interior"
@@ -436,9 +483,10 @@
         "Medium": 70,
         "Large": 120
       },
-      "description": "",
+      "description": "Supporting work retained in the archive while the main presentation leads with selected originals.",
       "featured": false,
-      "thumbnail": "images/thumbs/pain.jpg"
+      "thumbnail": "images/thumbs/pain.jpg",
+      "collection": "archive"
     },
     {
       "slug": "sitting-figure",
@@ -450,6 +498,7 @@
       "price": "$2,500",
       "image": "images/IMG_20240422_175529_875.png",
       "tags": [
+        "Archive",
         "Figure",
         "Portrait",
         "Interior"
@@ -460,9 +509,10 @@
         "Medium": 70,
         "Large": 120
       },
-      "description": "",
+      "description": "Supporting work retained in the archive while the main presentation leads with selected originals.",
       "featured": false,
-      "thumbnail": "images/thumbs/sitting-figure.jpg"
+      "thumbnail": "images/thumbs/sitting-figure.jpg",
+      "collection": "archive"
     },
     {
       "slug": "mask-off",
@@ -474,6 +524,7 @@
       "price": "",
       "image": "images/IMG_20210424_130913_187.jpg",
       "tags": [
+        "Archive",
         "Head",
         "Surreal",
         "Figure"
@@ -484,8 +535,9 @@
         "Medium": 70,
         "Large": 120
       },
-      "description": "",
-      "thumbnail": "images/thumbs/mask-off.jpg"
+      "description": "Sold earlier work retained as archive context.",
+      "thumbnail": "images/thumbs/mask-off.jpg",
+      "collection": "archive"
     },
     {
       "slug": "our-deal-leader",
@@ -497,6 +549,7 @@
       "price": "$2,700",
       "image": "images/doc02433320251113181942_0006.jpg",
       "tags": [
+        "Archive",
         "Head",
         "Surreal",
         "Figure"
@@ -507,8 +560,9 @@
         "Medium": 70,
         "Large": 120
       },
-      "description": "",
-      "thumbnail": "images/thumbs/our-deal-leader.jpg"
+      "description": "Earlier drawing retained as archive context.",
+      "thumbnail": "images/thumbs/our-deal-leader.jpg",
+      "collection": "archive"
     }
   ]
 }
