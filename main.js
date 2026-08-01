@@ -30,6 +30,9 @@ function priceDisplay(artwork) {
   if (artwork.status === "sold") {
     return "";
   } else if (typeof artwork.price === "string") {
+    if (/^\d+$/.test(artwork.price.trim())) {
+      return `$${Number(artwork.price).toLocaleString()}`;
+    }
     return artwork.price;
   }
   return artwork.price ? `$${artwork.price.toLocaleString()}` : "";
