@@ -21,6 +21,26 @@
       "thumbnail": "images/thumbs/untitled-46x40-oil-framed.jpg"
     },
     {
+      "slug": "infinite-jester",
+      "title": "Infinite Jester",
+      "year": 2026,
+      "size": "24 × 30 in",
+      "medium": "Oil on linen",
+      "status": "sold",
+      "price": "",
+      "image": "images/infinite-jester-2026-oil-on-linen.jpg",
+      "collection": "selected-originals",
+      "tags": [
+        "Selected Originals",
+        "Abstract",
+        "Sold"
+      ],
+      "printsAvailable": false,
+      "description": "Sold original oil painting retained as part of the current studio archive.",
+      "featured": false,
+      "thumbnail": "images/thumbs/infinite-jester.jpg"
+    },
+    {
       "slug": "brooklyn-bridge-study",
       "title": "Brooklyn Bridge Study",
       "year": 2026,
