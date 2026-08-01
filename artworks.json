@@ -41,6 +41,44 @@
       "thumbnail": "images/thumbs/infinite-jester.jpg"
     },
     {
+      "slug": "bedouin",
+      "title": "Bedouin",
+      "year": 2026,
+      "size": "28 × 18 in",
+      "medium": "Oil, acrylic, and paper on black plexiglass",
+      "status": "available",
+      "price": "Inquire",
+      "image": "images/bedouin-2026-black-plexiglass.jpg",
+      "collection": "selected-originals",
+      "tags": [
+        "Selected Originals",
+        "Abstract"
+      ],
+      "printsAvailable": false,
+      "description": "Original mixed-media work on black plexiglass, available by inquiry.",
+      "featured": false,
+      "thumbnail": "images/thumbs/bedouin.jpg"
+    },
+    {
+      "slug": "pinball-machine",
+      "title": "Pinball Machine",
+      "year": 2026,
+      "size": "20 × 24 in",
+      "medium": "Oil on canvas",
+      "status": "available",
+      "price": "$900",
+      "image": "images/pinball-machine-2026-oil-on-canvas.jpg",
+      "collection": "selected-originals",
+      "tags": [
+        "Selected Originals",
+        "Abstract"
+      ],
+      "printsAvailable": false,
+      "description": "Original oil painting on canvas, available from the current studio inventory.",
+      "featured": false,
+      "thumbnail": "images/thumbs/pinball-machine.jpg"
+    },
+    {
       "slug": "brooklyn-bridge-study",
       "title": "Brooklyn Bridge Study",
       "year": 2026,
