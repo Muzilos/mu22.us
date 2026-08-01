@@ -366,7 +366,9 @@ function openArtworkModal(slug) {
   const inquireBtn = document.getElementById("modalInquireButton");
   const printBtn = document.getElementById("modalPrintButton");
 
-  img.src = artwork.image;
+  const modalSrc = previewImage(artwork);
+  img.removeAttribute("src");
+  img.src = modalSrc;
   img.alt = artwork.title;
   titleEl.textContent = artwork.title;
   metaEl.textContent = `${artwork.year || ""}${artwork.size ? ` · ${artwork.size}` : ""
