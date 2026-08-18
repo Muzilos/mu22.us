@@ -56,7 +56,7 @@
       ],
       "printsAvailable": false,
       "description": "Original mixed-media work on black plexiglass, available by inquiry.",
-      "featured": false,
+      "featured": true,
       "thumbnail": "images/thumbs/bedouin.jpg"
     },
     {
@@ -76,7 +76,7 @@
       ],
       "printsAvailable": false,
       "description": "Small one-of-one New York study from the daily acrylic-on-paper series.",
-      "featured": false,
+      "featured": true,
       "thumbnail": "images/thumbs/brooklyn-bridge-study.jpg"
     },
     {
@@ -96,7 +96,7 @@
       ],
       "printsAvailable": false,
       "description": "Small one-of-one New York study from the daily acrylic-on-paper series.",
-      "featured": false,
+      "featured": true,
       "thumbnail": "images/thumbs/blue-tower-study.jpg"
     },
     {
@@ -224,7 +224,7 @@
         "Large": 120
       },
       "description": "A compact but high-impact original with a quiet, luminous presence. The surface and composition make it read as a serious handmade object rather than decorative wall filler.",
-      "featured": true,
+      "featured": false,
       "thumbnail": "images/thumbs/candle.jpg",
       "collection": "selected-originals"
     },
