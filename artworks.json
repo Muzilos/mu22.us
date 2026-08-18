@@ -60,32 +60,13 @@
       "thumbnail": "images/thumbs/bedouin.jpg"
     },
     {
-      "slug": "pinball-machine",
-      "title": "Pinball Machine",
-      "year": 2026,
-      "size": "20 × 24 in",
-      "medium": "Oil on canvas",
-      "status": "available",
-      "price": 900,
-      "image": "images/pinball-machine-2026-oil-on-canvas.jpg",
-      "collection": "selected-originals",
-      "tags": [
-        "Selected Originals",
-        "Abstract"
-      ],
-      "printsAvailable": false,
-      "description": "Original oil painting on canvas, available from the current studio inventory.",
-      "featured": false,
-      "thumbnail": "images/thumbs/pinball-machine.jpg"
-    },
-    {
       "slug": "brooklyn-bridge-study",
       "title": "Brooklyn Bridge Study",
       "year": 2026,
       "size": "5 × 8 in",
       "medium": "Acrylic on paper",
       "status": "available",
-      "price": 200,
+      "price": 400,
       "image": "images/nyc-study-brooklyn-bridge.jpg",
       "collection": "nyc-studies",
       "tags": [
@@ -105,7 +86,7 @@
       "size": "8 × 5 in",
       "medium": "Acrylic on paper",
       "status": "available",
-      "price": 200,
+      "price": 400,
       "image": "images/nyc-study-blue-tower.jpg",
       "collection": "nyc-studies",
       "tags": [
@@ -125,7 +106,7 @@
       "size": "5 × 8 in",
       "medium": "Acrylic on paper",
       "status": "available",
-      "price": 200,
+      "price": 400,
       "image": "images/nyc-study-waterfront-dusk.jpg",
       "collection": "nyc-studies",
       "tags": [
@@ -145,7 +126,7 @@
       "size": "8 × 5 in",
       "medium": "Acrylic on paper",
       "status": "available",
-      "price": 200,
+      "price": 400,
       "image": "images/nyc-study-night-block.jpg",
       "collection": "nyc-studies",
       "tags": [
@@ -165,7 +146,7 @@
       "size": "8 × 5 in",
       "medium": "Acrylic on paper",
       "status": "available",
-      "price": 200,
+      "price": 400,
       "image": "images/nyc-study-river-trees.jpg",
       "collection": "nyc-studies",
       "tags": [
@@ -204,7 +185,7 @@
       "size": "36 × 46 in",
       "medium": "Mixed media",
       "status": "available",
-      "price": 23120,
+      "price": 7520,
       "image": "images/03_City Street_2026_36 x 46in_Mixed media.jpg",
       "tags": [
         "Selected Originals",
@@ -229,7 +210,7 @@
       "size": "12 × 12 in",
       "medium": "Mixed media",
       "status": "available",
-      "price": 6700,
+      "price": 3700,
       "image": "images/Candle_2025_12 x 12in_Mixed Media-EDIT.jpg",
       "tags": [
         "Selected Originals",
@@ -304,7 +285,7 @@
       "size": "24 × 36 in",
       "medium": "Oil on linen",
       "status": "available",
-      "price": 13500,
+      "price": 5500,
       "image": "images/on-the-subway-train.jpg",
       "tags": [
         "Selected Originals",
@@ -328,7 +309,7 @@
       "size": "18 × 24 in",
       "medium": "Oil on linen",
       "status": "available",
-      "price": 4500,
+      "price": 2500,
       "image": "images/heaven.jpg",
       "tags": [
         "Archive",
@@ -354,7 +335,7 @@
       "size": "9 × 12 in",
       "medium": "gouache on yupo paper",
       "status": "available",
-      "price": 13500,
+      "price": 3500,
       "image": "images/tree.jpg",
       "tags": [
         "Selected Originals",
